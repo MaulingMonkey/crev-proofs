@@ -42,3 +42,24 @@ comment: "I wrote it, minimal 'unsafe' for FFI, well tested."
 le2F3ckXeRrwJqXW9ZDKclt028YFP1ddC3EzqgUlyyVJ4XSX4LYZZPru0mFA4vWVY-8cbI5JZBH_Ci0ICOYNDw
 -----END CREV PACKAGE REVIEW-----
 
+-----BEGIN CREV PACKAGE REVIEW-----
+version: -1
+date: "2019-07-23T15:47:17.525858900-07:00"
+from:
+  id-type: crev
+  id: 6OZqHXqyUAF57grEY7IVMjRljdd9dgDxiNtr1NF1BdY
+  url: "https://github.com/MaulingMonkey/crev-proofs"
+package:
+  source: "https://crates.io"
+  name: sourcefile
+  version: 0.1.4
+  digest: _GslysjAg1wRo6gyS1o7P4pvjYpdnSOVlv0YH1VCkEc
+review:
+  thoroughness: medium
+  understanding: medium
+  rating: positive
+comment: "Slightly odd-seeming design, looks sane/safe though."
+-----BEGIN CREV PACKAGE REVIEW SIGNATURE-----
+kzzTJNNnItFPBxE7RXwFsulsTycmsZKRPhUAQxa5KdRG23rx7imrKItABx3uEqD831-rfuAESRSlNmIam6iIBA
+-----END CREV PACKAGE REVIEW-----
+
