@@ -542,3 +542,25 @@ comment: "$gen::try_fill_bytes invokes undefined behavior (overlapping &mut u32 
 Ob3caDs_p5PR4cK0qvMPJhlUgvtvBCRjSXDJWXbKOMdSLb1sbCM1vaeZCdHFATZr01GgVS0mJxu1mqnkPczsCA
 -----END CREV PACKAGE REVIEW-----
 
+-----BEGIN CREV PACKAGE REVIEW-----
+version: -1
+date: "2019-07-24T15:58:33.613673700-07:00"
+from:
+  id-type: crev
+  id: 6OZqHXqyUAF57grEY7IVMjRljdd9dgDxiNtr1NF1BdY
+  url: "https://github.com/MaulingMonkey/crev-proofs"
+package:
+  source: "https://crates.io"
+  name: rdrand
+  version: 0.4.0
+  revision: 800e213cc91a83d3bf772398962e7c1f0fcc7825
+  digest: KUsK5gm7n3ClUjAsIfxmZAsuOyArXkWoOabbxe1GUZM
+review:
+  thoroughness: medium
+  understanding: medium
+  rating: negative
+comment: "$gen::try_fill_bytes invokes undefined behavior (overlapping &mut u32 and &mut [u8]): https://github.com/nagisa/rust_rdrand/issues/13.  0.5.x removed some use of uninitialized.\n\nReviewed:\n  benches\\rdrand.rs:  +1\n  benches\\rdseed.rs:  +1\n  benches\\std.rs:     +1\n  src\\changelog.rs:   +1\n  src\\lib.rs:  Concerns:\n    mem::uninitialized() u32s\n    is_x86_feature_detected: I have not verified this is correct.\n    loop_rand! uses mem::uninitialized() for $el:ty, easy to misuse!  Requires unsafe{} so technically sound.  Not exported.\n    $gen::try_fill_bytes:  UNSOUND!  word and buffer reference the same data.  As both are &mut Ts, this is 100% undefined behavior.\n    unsafe blocks appear much larger than they need to be.\n    ptr::copy_nonoverlapping: This should really use a slice copy which should be just as safe...?  But maybe missing from core?\n"
+-----BEGIN CREV PACKAGE REVIEW SIGNATURE-----
+9nhQG8qHOOJLjs-DFR5nQs2hH7tpFsNL9BUoBskdLj5ZvCOKccmKMnK56PsR99yDaOZI02x4C5XI1wVEyWLdBg
+-----END CREV PACKAGE REVIEW-----
+
