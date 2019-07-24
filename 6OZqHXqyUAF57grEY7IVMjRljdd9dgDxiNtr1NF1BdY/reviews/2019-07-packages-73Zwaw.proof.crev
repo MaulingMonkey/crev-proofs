@@ -106,3 +106,24 @@ comment: "No unsafe code, minor safe-looking file I/O"
 JpJKtaT2dK8w0qYh6j4T6_lV_keIZmjwrYfdOpRLjPTMJOWymlQ-ScTR9fIj5yyYNEt_5F5d1vreeuOlo91gAw
 -----END CREV PACKAGE REVIEW-----
 
+-----BEGIN CREV PACKAGE REVIEW-----
+version: -1
+date: "2019-07-23T18:47:09.136717200-07:00"
+from:
+  id-type: crev
+  id: 6OZqHXqyUAF57grEY7IVMjRljdd9dgDxiNtr1NF1BdY
+  url: "https://github.com/MaulingMonkey/crev-proofs"
+package:
+  source: "https://crates.io"
+  name: fs2
+  version: 0.4.3
+  digest: "-FDNqzos58isDYx2sCu10VkdCSC1Dl78rvTdixktfRg"
+review:
+  thoroughness: medium
+  understanding: medium
+  rating: positive
+comment: "I'm assuming GetVolumePathNameW will leave buffer null terminated if successful.  Unsafe only used for sane-looking FFI, and zeroing structs."
+-----BEGIN CREV PACKAGE REVIEW SIGNATURE-----
+IPQK4aHMUtpyn87JoUPoJCIAdjwjTmgk135pZkhRqicroFjCH1jYSTHxJPvZFaqjJ97eOpvrZEqmRFCv_b5WAQ
+-----END CREV PACKAGE REVIEW-----
+
