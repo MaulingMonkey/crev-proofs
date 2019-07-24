@@ -190,3 +190,25 @@ comment: "Trivial, looks correct, looks tested.  cfg!(debug_assertions) is a san
 jAxI5sW1QImQEAL1ljd1wDAZoQO_n7g4YuxMPNw3PtUDO4wNqcoYcmmRcSuWHLWsdqe1e4-Xw17cxfhD6M_BDA
 -----END CREV PACKAGE REVIEW-----
 
+-----BEGIN CREV PACKAGE REVIEW-----
+version: -1
+date: "2019-07-23T23:30:34.604089700-07:00"
+from:
+  id-type: crev
+  id: 6OZqHXqyUAF57grEY7IVMjRljdd9dgDxiNtr1NF1BdY
+  url: "https://github.com/MaulingMonkey/crev-proofs"
+package:
+  source: "https://crates.io"
+  name: smallvec
+  version: 0.6.10
+  revision: 830d32bbdb7dc858d1f81d662fe6dd06219f0647
+  digest: KCQHZ4p8HJWGuHhYLI_u_PolWMF3gMTXC62YMuCe2Fc
+review:
+  thoroughness: none
+  understanding: none
+  rating: negative
+comment: "Lots of unsafe code, long standing open 'maybe UB' issues that proved to be correct, 3 previous rustsec advisories, no obvious fuzz tests.  Use only under duress."
+-----BEGIN CREV PACKAGE REVIEW SIGNATURE-----
+R4SRh6-9I9GcIlydb4nasFbqN0ltOb8F9E3Rf94INzrHmZrplQu1JeX3uZIDTm2kkcjmbIaGY30-l6Bt4lKXDg
+-----END CREV PACKAGE REVIEW-----
+
