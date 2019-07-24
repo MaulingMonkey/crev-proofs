@@ -366,3 +366,25 @@ comment: "https://64.github.io/actix/  https://github.com/actix/actix-web/pull/9
 zlLhbuNaq7_3p5QC5KK-hsF6ovPletmrtcAnreFm9vrwKKll0GmQnHAdBAHP8NhsHG-ntxRKMtTEyq-9qCoICw
 -----END CREV PACKAGE REVIEW-----
 
+-----BEGIN CREV PACKAGE REVIEW-----
+version: -1
+date: "2019-07-23T23:59:01.437154400-07:00"
+from:
+  id-type: crev
+  id: 6OZqHXqyUAF57grEY7IVMjRljdd9dgDxiNtr1NF1BdY
+  url: "https://github.com/MaulingMonkey/crev-proofs"
+package:
+  source: "https://crates.io"
+  name: actix-server-config
+  version: 0.1.2
+  revision: 2955e49d78c5299fa8923c3b76d5e383baf829fc
+  digest: kmJQS0KH3yqPu3afVHqP9v0fkvZ9phxC0aAi4FXli5w
+review:
+  thoroughness: none
+  understanding: none
+  rating: negative
+comment: "https://64.github.io/actix/  https://github.com/actix/actix-web/pull/968#issuecomment-509894555"
+-----BEGIN CREV PACKAGE REVIEW SIGNATURE-----
+4wC7U9KC8jID6iA2sR6cKJ7OsABYNBUrpUWyfjrP65XiHk8qoRcdY9O3PWc2Od0VtsF2RuIpGBZcWMp9t4ZYAw
+-----END CREV PACKAGE REVIEW-----
+
