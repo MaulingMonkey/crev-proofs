@@ -63,3 +63,24 @@ comment: "Slightly odd-seeming design, looks sane/safe though."
 kzzTJNNnItFPBxE7RXwFsulsTycmsZKRPhUAQxa5KdRG23rx7imrKItABx3uEqD831-rfuAESRSlNmIam6iIBA
 -----END CREV PACKAGE REVIEW-----
 
+-----BEGIN CREV PACKAGE REVIEW-----
+version: -1
+date: "2019-07-23T18:08:56.765871600-07:00"
+from:
+  id-type: crev
+  id: 6OZqHXqyUAF57grEY7IVMjRljdd9dgDxiNtr1NF1BdY
+  url: "https://github.com/MaulingMonkey/crev-proofs"
+package:
+  source: "https://crates.io"
+  name: cargo
+  version: 0.20.0
+  digest: pQ2oCv7r8di6sGeqEsdjQRFNnIn_fIH0ZEjhygJTbxE
+review:
+  thoroughness: none
+  understanding: none
+  rating: positive
+comment: "https://github.com/rust-lang/cargo - I blindly trust rust"
+-----BEGIN CREV PACKAGE REVIEW SIGNATURE-----
+y1-q9_XE4ZStnxwtF-WC6-m5WvEhwBPilssQA95BFWQl_kX2yUpLpoaaY2X5lD_wUpk_-aLnsD8PYwFytkmsBw
+-----END CREV PACKAGE REVIEW-----
+
