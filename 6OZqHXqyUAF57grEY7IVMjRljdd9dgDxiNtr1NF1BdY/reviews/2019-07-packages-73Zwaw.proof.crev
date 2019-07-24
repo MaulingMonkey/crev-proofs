@@ -84,3 +84,25 @@ comment: "https://github.com/rust-lang/cargo - I blindly trust rust"
 y1-q9_XE4ZStnxwtF-WC6-m5WvEhwBPilssQA95BFWQl_kX2yUpLpoaaY2X5lD_wUpk_-aLnsD8PYwFytkmsBw
 -----END CREV PACKAGE REVIEW-----
 
+-----BEGIN CREV PACKAGE REVIEW-----
+version: -1
+date: "2019-07-23T18:24:16.181228600-07:00"
+from:
+  id-type: crev
+  id: 6OZqHXqyUAF57grEY7IVMjRljdd9dgDxiNtr1NF1BdY
+  url: "https://github.com/MaulingMonkey/crev-proofs"
+package:
+  source: "https://crates.io"
+  name: autocfg
+  version: 0.1.5
+  revision: 81ea9f3120f20d684fb97fe90f2848f137519dfc
+  digest: AD50FL3HnA4bDSzoE0-Ga3Lr5K-4Mw-LqEwQQRNMa0U
+review:
+  thoroughness: medium
+  understanding: medium
+  rating: positive
+comment: "No unsafe code, minor safe-looking file I/O"
+-----BEGIN CREV PACKAGE REVIEW SIGNATURE-----
+JpJKtaT2dK8w0qYh6j4T6_lV_keIZmjwrYfdOpRLjPTMJOWymlQ-ScTR9fIj5yyYNEt_5F5d1vreeuOlo91gAw
+-----END CREV PACKAGE REVIEW-----
+
