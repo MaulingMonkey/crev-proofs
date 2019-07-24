@@ -212,3 +212,25 @@ comment: "Lots of unsafe code, long standing open 'maybe UB' issues that proved 
 R4SRh6-9I9GcIlydb4nasFbqN0ltOb8F9E3Rf94INzrHmZrplQu1JeX3uZIDTm2kkcjmbIaGY30-l6Bt4lKXDg
 -----END CREV PACKAGE REVIEW-----
 
+-----BEGIN CREV PACKAGE REVIEW-----
+version: -1
+date: "2019-07-23T23:51:53.527009200-07:00"
+from:
+  id-type: crev
+  id: 6OZqHXqyUAF57grEY7IVMjRljdd9dgDxiNtr1NF1BdY
+  url: "https://github.com/MaulingMonkey/crev-proofs"
+package:
+  source: "https://crates.io"
+  name: actix-web
+  version: 1.0.5
+  revision: 6b7df6b242c1cf844ff95b26d963eb275b3d0ada
+  digest: WES9tX2Gb5Udu_lAn1ug9imMGT63s3Rci-CGF--8gd8
+review:
+  thoroughness: none
+  understanding: none
+  rating: negative
+comment: "https://64.github.io/actix/  https://github.com/actix/actix-web/pull/968#issuecomment-509894555"
+-----BEGIN CREV PACKAGE REVIEW SIGNATURE-----
+ZXtMA2RaJe9eh9TfQgprf9nxnEb0utgAuqmh0REi1KjeeswHkugDU8gi2OpCMRqeFEsfGOLHvtZZvdaMpYvfBQ
+-----END CREV PACKAGE REVIEW-----
+
