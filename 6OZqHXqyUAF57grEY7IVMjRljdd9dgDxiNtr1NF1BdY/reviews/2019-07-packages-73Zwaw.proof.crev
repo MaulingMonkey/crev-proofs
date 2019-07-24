@@ -169,3 +169,24 @@ comment: "Interesting idea.  Lots of unsafe!  Supposedly auto-generated.\nI have
 7Jrim9rmGAhXtiNgxCtqj_fw1MzgvtVMxrRRQeMJaQsr8TTOIQ0sRQ3i5yVjryZKUYHOVqwCOcnaYsvDWqPtCw
 -----END CREV PACKAGE REVIEW-----
 
+-----BEGIN CREV PACKAGE REVIEW-----
+version: -1
+date: "2019-07-23T22:37:40.701289400-07:00"
+from:
+  id-type: crev
+  id: 6OZqHXqyUAF57grEY7IVMjRljdd9dgDxiNtr1NF1BdY
+  url: "https://github.com/MaulingMonkey/crev-proofs"
+package:
+  source: "https://crates.io"
+  name: matches
+  version: 0.1.8
+  digest: wEgXzIZmN2BvT4dl90vyR0WVYgLwYc0BETwLJ_ySYOc
+review:
+  thoroughness: medium
+  understanding: medium
+  rating: positive
+comment: "Trivial, looks correct, looks tested.  cfg!(debug_assertions) is a sane cfg."
+-----BEGIN CREV PACKAGE REVIEW SIGNATURE-----
+jAxI5sW1QImQEAL1ljd1wDAZoQO_n7g4YuxMPNw3PtUDO4wNqcoYcmmRcSuWHLWsdqe1e4-Xw17cxfhD6M_BDA
+-----END CREV PACKAGE REVIEW-----
+
