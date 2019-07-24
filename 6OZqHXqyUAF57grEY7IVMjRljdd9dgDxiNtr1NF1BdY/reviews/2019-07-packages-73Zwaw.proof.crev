@@ -498,3 +498,25 @@ comment: "https://64.github.io/actix/  https://github.com/actix/actix-web/pull/9
 uXBEaF7-kk4bU8K1fSi1fmDzkB4d-N-_uBi3Mn92e9jnYODMsQY1rBrtXxM4vTprVehjQOk8i77mpcBhCOx2AA
 -----END CREV PACKAGE REVIEW-----
 
+-----BEGIN CREV PACKAGE REVIEW-----
+version: -1
+date: "2019-07-24T14:53:11.836480900-07:00"
+from:
+  id-type: crev
+  id: 6OZqHXqyUAF57grEY7IVMjRljdd9dgDxiNtr1NF1BdY
+  url: "https://github.com/MaulingMonkey/crev-proofs"
+package:
+  source: "https://crates.io"
+  name: redox_syscall
+  version: 0.1.56
+  revision: e3fd644ba9830d104c309f77c36dc6b94f92f2b1
+  digest: FTw1q2J_JAvJHFyP4Xn0URVlkBDh1xI3mxs5sFn_A-U
+review:
+  thoroughness: low
+  understanding: low
+  rating: negative
+comment: "Exposes unsound APIs, lots of unverified syscalls.\n\nReviewed:\n\n  src\\arch\\*.rs:  Skimmed... looks reasonable, but didn't verify correct instructions / register invalidation.\n\n  src\\io\\dma.rs:  Some unsafe... looks correct, but not thoroughly tested.\n  src\\io\\io.rs:   +1\n  src\\io\\mmio.rs: UNSOUND (can construct uninitialized() T via \"safe\" `Mmio::new()`!)\n  src\\io\\mod.rs:  +1\n  src\\io\\pio.rs:  Some unsafe... looks reasonable, but didn't verify correct instructions.\n\n  src\\scheme\\generate.sh: +1\n  src\\scheme\\mod.rs:      +1\n  src\\scheme\\scheme*.rs:  UNSOUND (can construct arbitrary slices from arbitrary Packet s via `Scheme*::handle`)\n\n  .cargo_vcs_info.json: +1\n  .cargo-ok:            +1\n  .gitlab-ci.yml:       +1\n  Cargo.toml:           +1\n  Cargo.toml.orig:      +1\n  LICENSE:              +1\n  README.md:            +1\n\nSkimmed:\n\n  src\\call.rs:    Lots of unsafe syscalls... unverified.\n  src\\data.rs:    UNSOUND (Map deref etc.)\n  src\\error.rs:   No tests for STR_ERROR, but at least it's sound.\n  src\\flag.rs:    Sound, magic constant city, meh.\n  src\\lib.rs:     LEAKS UNSOUND TRAITS into public interface!\n  src\\number.rs:  Safe, magic constant city.\n  src\\tests.rs:   Unsafe, but only #[test]s\n"
+-----BEGIN CREV PACKAGE REVIEW SIGNATURE-----
+YjrI_H2WebGSeomza55kfnxLuXo4b8cfYzaP6vAz1bP0wiPOvwr2WB3Q95LV8KsNVGiaykXjkeRFc7O4eFQbBA
+-----END CREV PACKAGE REVIEW-----
+
