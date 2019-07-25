@@ -644,3 +644,26 @@ comment: |
 kBXTP1PoorHEJ8jMKUDw_ORySb59pR0Z1j45rX27fhHiiH02GIuL_JbN1mPi-x8rIHxD7vOCqksFRCeOOLfYCQ
 -----END CREV PACKAGE REVIEW-----
 
+-----BEGIN CREV PACKAGE REVIEW-----
+version: -1
+date: "2019-07-24T20:48:21.267085-07:00"
+from:
+  id-type: crev
+  id: 6OZqHXqyUAF57grEY7IVMjRljdd9dgDxiNtr1NF1BdY
+  url: "https://github.com/MaulingMonkey/crev-proofs"
+package:
+  source: "https://crates.io"
+  name: cargo-ndk
+  version: 0.3.0
+  revision: 9ef47285a2c62cec446107db12bdfc88dd295918
+  digest: bJ8jga8yc2JZRCb-pGKDk4xOqH5pwLYKN40azYeFH7s
+review:
+  thoroughness: low
+  understanding: medium
+  rating: positive
+comment: |
+  Pretty trivial, not even sure if it'll work right on windows to be worth using.
+-----BEGIN CREV PACKAGE REVIEW SIGNATURE-----
+uwAiXp5024RCu19KeAWmTOD89sNO0YX5MSd1FCHyO50xH8-ES5lNxbejZY1g9rrV4ucxqej284ksozguJumfDQ
+-----END CREV PACKAGE REVIEW-----
+
