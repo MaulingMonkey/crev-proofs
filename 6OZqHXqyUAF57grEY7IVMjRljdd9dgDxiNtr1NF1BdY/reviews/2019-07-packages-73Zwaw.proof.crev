@@ -608,3 +608,39 @@ comment: |
 1heEfvDtW2yEWRxZjugDT468u9ftZnQdj6MNYIxuhkbi8nc4TbA6feh-SJCUy2gEEnuNB6unwBzUoe_pCJx1Dw
 -----END CREV PACKAGE REVIEW-----
 
+-----BEGIN CREV PACKAGE REVIEW-----
+version: -1
+date: "2019-07-24T19:19:07.063499200-07:00"
+from:
+  id-type: crev
+  id: 6OZqHXqyUAF57grEY7IVMjRljdd9dgDxiNtr1NF1BdY
+  url: "https://github.com/MaulingMonkey/crev-proofs"
+package:
+  source: "https://crates.io"
+  name: lazy_static
+  version: 0.2.11
+  digest: wPLFFiGi_hhlu1wRLR_YLNM7FCGO5aywD87u5wBDD7c
+review:
+  thoroughness: medium
+  understanding: medium
+  rating: negative
+comment: |
+  lazy_static 0.2.11 relied on unsafe muts which would have race conditions during initialization.
+  I recommend upgrading to a modern lazy_static 1.3.0+!
+  
+  src\core_lazy.rs:       +1
+  src\lazy.rs:            -1 UNSOUND (race conditions in multithreaded init due to static mut / mut refs taken outside of call_once)
+  src\lib.rs:             -1 UNSOUND (uses the static muts without syncronization)
+  src\nightly_lazy.rs:    -1 UNSOUND (race conditions in multithreaded init due to static mut / mut refs taken outside of call_once)
+  
+  tests\*:                +1 (skimmed, seem fine)
+  
+  .travis.yml:            +1
+  .appveyor.yml:          +1
+  Cargo.toml:             +1
+  Cargo.toml.orig:        +1
+  README.md:              +1
+-----BEGIN CREV PACKAGE REVIEW SIGNATURE-----
+kBXTP1PoorHEJ8jMKUDw_ORySb59pR0Z1j45rX27fhHiiH02GIuL_JbN1mPi-x8rIHxD7vOCqksFRCeOOLfYCQ
+-----END CREV PACKAGE REVIEW-----
+
