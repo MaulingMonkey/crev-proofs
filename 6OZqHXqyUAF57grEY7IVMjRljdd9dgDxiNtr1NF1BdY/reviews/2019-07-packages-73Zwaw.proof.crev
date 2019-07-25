@@ -585,3 +585,26 @@ comment: "A mixed bag.\nOn the one hand, the core tool found in `src` seems fine
 MjczoFPvzzdwkx6v7PdY91OMQAT5RoLta-DwpTOk7avx5_c9bF40PyFf1a_JfpavkhdqLlteczLWzFM4Ae1gAg
 -----END CREV PACKAGE REVIEW-----
 
+-----BEGIN CREV PACKAGE REVIEW-----
+version: -1
+date: "2019-07-24T18:42:54.784518800-07:00"
+from:
+  id-type: crev
+  id: 6OZqHXqyUAF57grEY7IVMjRljdd9dgDxiNtr1NF1BdY
+  url: "https://github.com/MaulingMonkey/crev-proofs"
+package:
+  source: "https://crates.io"
+  name: vcpkg
+  version: 0.2.7
+  revision: c8a6af504f48f84e3df6eba4051c7835b92a7976
+  digest: hzRxhjn_udO-mlSMt5hqdnwP0z9FMxIlVqUV_Pf73IU
+review:
+  thoroughness: low
+  understanding: low
+  rating: positive
+comment: |
+  I'm unfamiliar with vcpkg s, but looks reasonable + all safe code.
+-----BEGIN CREV PACKAGE REVIEW SIGNATURE-----
+1heEfvDtW2yEWRxZjugDT468u9ftZnQdj6MNYIxuhkbi8nc4TbA6feh-SJCUy2gEEnuNB6unwBzUoe_pCJx1Dw
+-----END CREV PACKAGE REVIEW-----
+
