@@ -667,3 +667,55 @@ comment: |
 uwAiXp5024RCu19KeAWmTOD89sNO0YX5MSd1FCHyO50xH8-ES5lNxbejZY1g9rrV4ucxqej284ksozguJumfDQ
 -----END CREV PACKAGE REVIEW-----
 
+-----BEGIN CREV PACKAGE REVIEW-----
+version: -1
+date: "2019-07-25T15:08:09.720700400-07:00"
+from:
+  id-type: crev
+  id: 6OZqHXqyUAF57grEY7IVMjRljdd9dgDxiNtr1NF1BdY
+  url: "https://github.com/MaulingMonkey/crev-proofs"
+package:
+  source: "https://crates.io"
+  name: rdrand
+  version: 0.5.2
+  revision: da801f2161043d5253c55c6c11ef4723c3a7c340
+  digest: 1YBfBI1yxn1Of0GimqGhl_Hj2ID1lcOkHhC6R1kgP5c
+package-diff-base:
+  source: "https://crates.io"
+  name: rdrand
+  version: 0.4.0
+  revision: 800e213cc91a83d3bf772398962e7c1f0fcc7825
+  digest: KUsK5gm7n3ClUjAsIfxmZAsuOyArXkWoOabbxe1GUZM
+review:
+  thoroughness: medium
+  understanding: medium
+  rating: neutral
+comment: |
+  Sound, although buggy AMD hardware makes implementing CryptoRng for RdRand/RdSeed a little unnerving to me ( https://github.com/nagisa/rust_rdrand/issues/12 )
+  
+  Reviewed:
+      benches\rdrand.rs:  +1
+      benches\rdseed.rs:  +1
+      benches\std.rs:     +1
+      src\changelog.rs:   +1
+      src\lib.rs:         0
+          All of $gen::try_fill_bytes::imp being unsafe is still concerning... but I believe it's sound now.
+          RdRand/RdSeed implement CrytoRng, which makes buggy AMD hardware concerning: https://github.com/nagisa/rust_rdrand/issues/12
+  
+  Concerns reduced since 0.4.0:
+      https://github.com/nagisa/rust_rdrand/commit/7af432c6e315fde053d0056d1b7df893a865711a
+          unsafe blocks appear much larger than they need to be.
+  
+  Concerns fixed since 0.4.0:
+      https://github.com/nagisa/rust_rdrand/commit/26a0a2f9d885fbbb8e14fa47c8a48e366cf15455
+          mem::uninitialized() u32s
+          loop_rand! uses mem::uninitialized() for $el:ty, easy to misuse!  Requires unsafe{} so technically sound.  Not exported.
+      https://github.com/nagisa/rust_rdrand/commit/7af432c6e315fde053d0056d1b7df893a865711a
+          $gen::try_fill_bytes:  UNSOUND!  word and buffer reference the same data.  As both are &mut Ts, this is 100% undefined behavior.
+          ptr::copy_nonoverlapping: This should really use a slice copy which should be just as safe...?  But maybe missing from core?
+      Verified vs https://www.amd.com/system/files/TechDocs/24594.pdf
+          is_x86_feature_detected: I have not verified this is correct.
+-----BEGIN CREV PACKAGE REVIEW SIGNATURE-----
+NXS5FUbEBgLYi8D9sBbuO6MMghbJ5v6ZPA9Lyedvr0FRG3Zb38ik5IZONyuI_AcJZrlIgfKQ0vfRBK5vEWpvAw
+-----END CREV PACKAGE REVIEW-----
+
