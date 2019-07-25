@@ -564,3 +564,24 @@ comment: "$gen::try_fill_bytes invokes undefined behavior (overlapping &mut u32 
 9nhQG8qHOOJLjs-DFR5nQs2hH7tpFsNL9BUoBskdLj5ZvCOKccmKMnK56PsR99yDaOZI02x4C5XI1wVEyWLdBg
 -----END CREV PACKAGE REVIEW-----
 
+-----BEGIN CREV PACKAGE REVIEW-----
+version: -1
+date: "2019-07-24T17:27:03.714134500-07:00"
+from:
+  id-type: crev
+  id: 6OZqHXqyUAF57grEY7IVMjRljdd9dgDxiNtr1NF1BdY
+  url: "https://github.com/MaulingMonkey/crev-proofs"
+package:
+  source: "https://crates.io"
+  name: cargo-apk
+  version: 0.4.0
+  digest: ZnDKOOIx95DawxrU0yJOOx0WQQyyToihWVoM8FDA2vI
+review:
+  thoroughness: low
+  understanding: medium
+  rating: negative
+comment: "A mixed bag.\nOn the one hand, the core tool found in `src` seems fine, solid fundamentals.\nOn the other hand, the glue code is full chock full of unsafe, some of it unsound.\nWorse, the FFI includes things that varies from android SDK to SDK from the loops of things.\n\n\n\ninjected-glue\\ffi.rs:   -1\n  Should be replaced with bindgen generated header?  Also, changes between SDKs, so really really really should not be simply hardcoded...!\n  Ref: https://android.googlesource.com/platform/development/+/4948c163663ecc343c97e4c2a2139234f1d3273f/ndk/sources/android/native_app_glue/android_native_app_glue.h\n  Ref: https://chromium.googlesource.com/android_tools/+/7fc902d157a9aed7a2b68adc9c69181b3a43cd58/ndk/sources/android/native_app_glue/android_native_app_glue.h\n  45  LOOPER_ID_INPUT:    Wrong? (should be 2?: https://chromium.googlesource.com/android_tools/+/7fc902d157a9aed7a2b68adc9c69181b3a43cd58/ndk/sources/android/native_app_glue/android_native_app_glue.h#204)\n      LOOPER_ID_EVENT?    Different name? https://android.googlesource.com/platform/development/+/4948c163663ecc343c97e4c2a2139234f1d3273f/ndk/sources/android/native_app_glue/android_native_app_glue.h\n  46  LOOPER_ID_USER:     Wrong? (should be 3?: https://chromium.googlesource.com/android_tools/+/7fc902d157a9aed7a2b68adc9c69181b3a43cd58/ndk/sources/android/native_app_glue/android_native_app_glue.h#209)\n  65+ Skimmed only\n\ninjected-glue\\lib.rs:   -1\n  92  static mut ANDROID_APP  should be UnsafeCell\n  164 static mut G_MAINTHREAD_BOXED should be UnsafeCell, probable undefined behavior / race conditions\n  172 scary transmutes\n  182 Unsound when combined with\n  191 'safe' access\n  196 android_main2 is UNSOUND - dereferencing pointers, setting globals, etc. without being marked unsafe.\n  197+ Skimmed only\n  340: giant unsafe block\n  347: uninitialized\n\n\n\nsrc\\ops\\build.rs:       +1\n   75 Medium:  I suspect this won't work on windows as it doesn't use .cmd scripts for the compiler/linker?\n  131 Medium:  injected_glue_lib cmd.exec()?; followed by cmd.exec_with_output()?; (134)- does the glue get double compiled for no good reason?\n  218 Medium:  unreachable! abused where panic! probably should be?\n  423 Minor:   Hardcodes a lot of assumptions.  Good foundation though.\n\nsrc\\ops\\install.rs:     +1\n  Medium:  No way to specify device\nsrc\\ops\\mod.rs:         +1\nsrc\\ops\\run.rs:         +1\n  Medium:  No way to specify device\n\nsrc\\config.rs:          +1\n  Minor:  Could use more OsString\n  Minor:  Non-optional opengles_version_*\nsrc\\main.rs:            +1\n\nCargo.toml:             +1\nCargo.toml.orig:        +1\nglue_obj.rs:            Sketchy looking casts and `main` handling... but might be right\nlinker.rs:              Strange parse_arguments loop style... but safe, looks sane.\n"
+-----BEGIN CREV PACKAGE REVIEW SIGNATURE-----
+MjczoFPvzzdwkx6v7PdY91OMQAT5RoLta-DwpTOk7avx5_c9bF40PyFf1a_JfpavkhdqLlteczLWzFM4Ae1gAg
+-----END CREV PACKAGE REVIEW-----
+
