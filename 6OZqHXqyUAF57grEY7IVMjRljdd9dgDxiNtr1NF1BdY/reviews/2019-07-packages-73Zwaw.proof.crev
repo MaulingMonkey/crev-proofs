@@ -874,3 +874,40 @@ comment: |
 8ARWSbp_P9uvRolfD7JSJ2o1vV9HMdgXszhUFmrRT6ousSNXggZTIzCfemlk4nNG43oKge-QCMMGVaSl_G5_Cg
 -----END CREV PACKAGE REVIEW-----
 
+-----BEGIN CREV PACKAGE REVIEW-----
+version: -1
+date: "2019-07-26T14:39:32.496306600-07:00"
+from:
+  id-type: crev
+  id: 6OZqHXqyUAF57grEY7IVMjRljdd9dgDxiNtr1NF1BdY
+  url: "https://github.com/MaulingMonkey/crev-proofs"
+package:
+  source: "https://crates.io"
+  name: dinghy-build
+  version: 0.4.11
+  revision: 1fa5b89b2bb50264a5fd93d9791b843763cf7682
+  digest: 70P30qFd_VRtAAJO0wqEDS2TWJFXeQT3T-eQKFXZP7A
+review:
+  thoroughness: medium
+  understanding: low
+  rating: positive
+comment: |
+  Some of the build/path stuff seems a little off... but might be correct?
+  All safe code, no security problems.
+  
+  Reviewed:
+  
+      src\build_env.rs    +1
+      src\build.rs        +1
+      src\lib.rs          0
+          102 Is this really correct for specifying the *host* environment?
+          105 ..
+      src\utils.rs        0
+          14  Isn't this generating /../../../ ?  Doesn't seem right...
+  
+      Cargo.toml          +1
+      Cargo.toml.orig     +1
+-----BEGIN CREV PACKAGE REVIEW SIGNATURE-----
+GBWbnyOmk7KkD5REz1U5pqV_ZbFXysS7526FMb7RiLN38fcPykDZYhL8rEHmep2hz8---TVD-InzcFPePl4bCQ
+-----END CREV PACKAGE REVIEW-----
+
