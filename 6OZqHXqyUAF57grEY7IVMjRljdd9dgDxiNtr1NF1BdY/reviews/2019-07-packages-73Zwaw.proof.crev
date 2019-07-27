@@ -1091,3 +1091,25 @@ comment: |
 jCBu5dxDwCA2xyVzhWXftH68Yz7Modb4ykRLu19kQcgVNERyATGBPhMHZRLNt6oEU3ntmxQl9ewl43uw7pV3CQ
 -----END CREV PACKAGE REVIEW-----
 
+-----BEGIN CREV PACKAGE REVIEW-----
+version: -1
+date: "2019-07-27T13:45:54.796051500-07:00"
+from:
+  id-type: crev
+  id: 6OZqHXqyUAF57grEY7IVMjRljdd9dgDxiNtr1NF1BdY
+  url: "https://github.com/MaulingMonkey/crev-proofs"
+package:
+  source: "https://crates.io"
+  name: vlq
+  version: 0.5.1
+  digest: VPKPuokfKpG1ruHZwpW7ZYt3F-MnRSWT8TvWxgP5J8k
+review:
+  thoroughness: low
+  understanding: medium
+  rating: positive
+comment: |
+  Haven't thoroughly verified base64 logic but looks good skimming everything.
+-----BEGIN CREV PACKAGE REVIEW SIGNATURE-----
+grvk1SBNNsDZZWmj97IF_dGwVgll7_mg-Zh9GcSz_47gXUizg3g_gU7l1NA9s6oFEVcGWVFzf1ezvgGS54WJCA
+-----END CREV PACKAGE REVIEW-----
+
