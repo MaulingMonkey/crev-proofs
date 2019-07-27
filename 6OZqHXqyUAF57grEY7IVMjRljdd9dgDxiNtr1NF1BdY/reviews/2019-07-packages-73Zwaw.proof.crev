@@ -1041,3 +1041,28 @@ comment: |
 GnbejaK7eCNn2tH8cBkoHXQyYVKl56QcsJKV_Dn7IyBYRAAP5Gv2ogiW4cRca_Io6aaWMrivrut4kI9dKMgXDg
 -----END CREV PACKAGE REVIEW-----
 
+-----BEGIN CREV PACKAGE REVIEW-----
+version: -1
+date: "2019-07-27T01:30:23.599356800-07:00"
+from:
+  id-type: crev
+  id: 6OZqHXqyUAF57grEY7IVMjRljdd9dgDxiNtr1NF1BdY
+  url: "https://github.com/MaulingMonkey/crev-proofs"
+package:
+  source: "https://crates.io"
+  name: foreign-types
+  version: 0.3.2
+  digest: LPmi2q28PQUwI7c77l1YqJAhp-K7lTtEJoTiYmwbwkg
+review:
+  thoroughness: medium
+  understanding: medium
+  rating: negative
+comment: |
+  foreign_type! can generate unsound code without using the `unsafe` keyword in client code at all.
+  
+  - Invokes C FFI which may be unsafe from safe fns.
+  - More recent versions (0.4.0) can implement unsafe traits (Send, Sync) without the unsafe keyword at all.
+-----BEGIN CREV PACKAGE REVIEW SIGNATURE-----
+r-cZhmY66OG9DuWrdw0jZo9qbwH5HtcA0do3wAd_auWH0v5Wrh6egbvJYb62iRb112efvsVFYdfFbE604l0YDw
+-----END CREV PACKAGE REVIEW-----
+
