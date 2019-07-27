@@ -1066,3 +1066,28 @@ comment: |
 r-cZhmY66OG9DuWrdw0jZo9qbwH5HtcA0do3wAd_auWH0v5Wrh6egbvJYb62iRb112efvsVFYdfFbE604l0YDw
 -----END CREV PACKAGE REVIEW-----
 
+-----BEGIN CREV PACKAGE REVIEW-----
+version: -1
+date: "2019-07-27T01:51:56.036206800-07:00"
+from:
+  id-type: crev
+  id: 6OZqHXqyUAF57grEY7IVMjRljdd9dgDxiNtr1NF1BdY
+  url: "https://github.com/MaulingMonkey/crev-proofs"
+package:
+  source: "https://crates.io"
+  name: foreign-types-shared
+  version: 0.1.1
+  digest: 8F3CHDJEfafSHmohelw3lbPmUtMThY4Oe7pQk9gRqE8
+review:
+  thoroughness: medium
+  understanding: low
+  rating: negative
+comment: |
+  Technically sound, but makes me nervous.
+  
+  Opaque: Looks way too dereferencable, and would have the wrong size - that of `()`.
+  ForeignTypeRef: Unchecked pointer casts galore.
+-----BEGIN CREV PACKAGE REVIEW SIGNATURE-----
+jCBu5dxDwCA2xyVzhWXftH68Yz7Modb4ykRLu19kQcgVNERyATGBPhMHZRLNt6oEU3ntmxQl9ewl43uw7pV3CQ
+-----END CREV PACKAGE REVIEW-----
+
