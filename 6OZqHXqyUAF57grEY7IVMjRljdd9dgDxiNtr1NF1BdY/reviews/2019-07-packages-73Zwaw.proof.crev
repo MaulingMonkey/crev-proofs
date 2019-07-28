@@ -1365,3 +1365,38 @@ comment: |
 wuko7X2PJHIs_wAnSJvLd_GygogHDKJLOcLh7LnMiqU6naZXxzYeZdr9Q9io_KB0Ci55NKGKZRJfFOMIbuKsBg
 -----END CREV PACKAGE REVIEW-----
 
+-----BEGIN CREV PACKAGE REVIEW-----
+version: -1
+date: "2019-07-28T16:24:01.443956-07:00"
+from:
+  id-type: crev
+  id: 6OZqHXqyUAF57grEY7IVMjRljdd9dgDxiNtr1NF1BdY
+  url: "https://github.com/MaulingMonkey/crev-proofs"
+package:
+  source: "https://crates.io"
+  name: arrayvec
+  version: 0.4.9
+  revision: 2316b85fbce3dc5380ec07f9ae8feb31a2baf82a
+  digest: bwksY0BucIcQnaZCk4PjArtBsBAkm-UZc-jJIqOSq_c
+package-diff-base:
+  source: "https://crates.io"
+  name: arrayvec
+  version: 0.4.8
+  revision: c8d12cecb372a7bcf9cd213b6db72e359fbc6fb3
+  digest: Tpor7Z0QAKKsMTN9CUkZXrJKFXjrpgfKcxt_HJc0DbM
+review:
+  thoroughness: high
+  understanding: medium
+  rating: negative
+comment: |
+  Prefer 0.4.11 which at least starts using MaybeUninit instead of uninitialized!(), which is fundamentally unsound.
+  Uses a disturbing amount of unsafe, but aside from uninitialized, it all at least appears to be correct after a careful reading.
+  Unlike smallvec, this doesn't fall back on the heap.
+  Better than whatever you'll write rolling your own, at least.
+  
+  0.4.7 -> 0.4.8: IntoIter implemented Clone, unconcerning
+  0.4.8 -> 0.4.9: ArrayString initialized to 0, ArrayVec uses nightly MaybeUninit.  Unfortunately stable still uses uninitialized!() so this is still negative.
+-----BEGIN CREV PACKAGE REVIEW SIGNATURE-----
+ccPzlB0A_X1gayeqVMkXBoqFi6r0fShfwFZS8rO80RVx3ILx8iRuyZRBKbdHg4evvB0sqmrMtKWXK0PledifCQ
+-----END CREV PACKAGE REVIEW-----
+
