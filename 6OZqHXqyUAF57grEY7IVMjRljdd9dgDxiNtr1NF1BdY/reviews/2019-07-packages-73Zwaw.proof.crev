@@ -1166,3 +1166,61 @@ comment: |
 jUL7PHGj5e-feKMXPMpiBzOA7zjLSOiwf5jLbvzsWQV59MfjfyxcbqDOq8-1NhqTDsP4rc7laT4eRFVt48KGBw
 -----END CREV PACKAGE REVIEW-----
 
+-----BEGIN CREV PACKAGE REVIEW-----
+version: -1
+date: "2019-07-28T10:54:53.981401-07:00"
+from:
+  id-type: crev
+  id: 6OZqHXqyUAF57grEY7IVMjRljdd9dgDxiNtr1NF1BdY
+  url: "https://github.com/MaulingMonkey/crev-proofs"
+package:
+  source: "https://crates.io"
+  name: wasmparser
+  version: 0.15.2
+  digest: uJC2wg6E6qm5BjS0fA-WbmHUDg_yYHtP0uHcEij5fU8
+package-diff-base:
+  source: "https://crates.io"
+  name: wasmparser
+  version: 0.15.3
+  digest: OIgd9QKMtIYOGsa-3M3ST7iE7Fudj0YqmIA4tYiuB6E
+review:
+  thoroughness: low
+  understanding: medium
+  rating: positive
+comment: |
+  Looks great overall.
+  I haven't double-checked any logic against WASM specs.
+  I haven't verified that WASM validation is suitable to rely upon for JIT compilers or the like.
+  
+  Detail
+  ======
+  
+  | File                  | Rating | Notes |
+  | --------------------- | ------ | ----- |
+  | examples/dump.rs      | +1    | io (safe) |
+  | examples/simple.rs    | +1    | io (safe) |
+  | fuzz/*                |       | UNREVIEWED (excluded from crate) |
+  | src/lib.rs            | +1    | |
+  | src/limits.rs         | +1    | |
+  | src/parser.rs         | +1    | |
+  | src/tests.rs          | +1    | io (safe) |
+  | src/validator.rs      | +1    | check_utf8 could be mostly replaced with stdlib? |
+  | tests/*.wasm          |       | Unreviewed... nothing but WASM though, should be OK |
+  | .gitignore            | +1    | |
+  | .travis.yml           | +1    | |
+  | Cargo.toml            | +1    | |
+  | Cargo.toml.orig       | +1    | |
+  | check-rustfmt.sh      | +1    | Globally overwrites rustfmt with specific version |
+  | format-all.sh         | +1    | |
+  | LICENSE               | +1    | Apache 2.0 |
+  | Readme.md             | +1    | |
+  | test-all.sh           | +1    | |
+  
+  | Other     | Rating | Notes |
+  | --------- | ------ | ----- |
+  | unsafe    | +1    | No unsafe code.
+  | fs        | +1    | Examples and tests only, reasonably used.
+-----BEGIN CREV PACKAGE REVIEW SIGNATURE-----
+5haIzhBDi6j1hCloozivpsjyvtm7_vnomHFp_yTS7RUoOM77cS6C40eEVynTE6xmQcIds8uNx8bp_aojKF0qBQ
+-----END CREV PACKAGE REVIEW-----
+
