@@ -1332,3 +1332,36 @@ comment: |
 JQ73XJUfRATtGvZHLCmRJjj6jzKk7MnlkymHTu6NzvPHGlAY5xI3FD-yMsBfM71dKCcNxaTDCsKUldXnyNt5Ag
 -----END CREV PACKAGE REVIEW-----
 
+-----BEGIN CREV PACKAGE REVIEW-----
+version: -1
+date: "2019-07-28T16:10:17.023402700-07:00"
+from:
+  id-type: crev
+  id: 6OZqHXqyUAF57grEY7IVMjRljdd9dgDxiNtr1NF1BdY
+  url: "https://github.com/MaulingMonkey/crev-proofs"
+package:
+  source: "https://crates.io"
+  name: arrayvec
+  version: 0.4.8
+  revision: c8d12cecb372a7bcf9cd213b6db72e359fbc6fb3
+  digest: Tpor7Z0QAKKsMTN9CUkZXrJKFXjrpgfKcxt_HJc0DbM
+package-diff-base:
+  source: "https://crates.io"
+  name: arrayvec
+  version: 0.4.7
+  digest: Qm8pnnLf79BuCjurE9DgtpJXFziWm70bA9u6D2s96Wk
+review:
+  thoroughness: high
+  understanding: medium
+  rating: negative
+comment: |
+  Prefer 0.4.11 which at least starts using MaybeUninit instead of uninitialized!(), which is fundamentally unsound.
+  Uses a disturbing amount of unsafe, but aside from uninitialized, it all at least appears to be correct after a careful reading.
+  Unlike smallvec, this doesn't fall back on the heap.
+  Better than whatever you'll write rolling your own, at least.
+  
+  See 0.4.7 for base review.  Diffed 0.4.7 -> 0.4.8, no concerning changes.
+-----BEGIN CREV PACKAGE REVIEW SIGNATURE-----
+wuko7X2PJHIs_wAnSJvLd_GygogHDKJLOcLh7LnMiqU6naZXxzYeZdr9Q9io_KB0Ci55NKGKZRJfFOMIbuKsBg
+-----END CREV PACKAGE REVIEW-----
+
