@@ -1224,3 +1224,111 @@ comment: |
 5haIzhBDi6j1hCloozivpsjyvtm7_vnomHFp_yTS7RUoOM77cS6C40eEVynTE6xmQcIds8uNx8bp_aojKF0qBQ
 -----END CREV PACKAGE REVIEW-----
 
+-----BEGIN CREV PACKAGE REVIEW-----
+version: -1
+date: "2019-07-28T13:03:05.604212800-07:00"
+from:
+  id-type: crev
+  id: 6OZqHXqyUAF57grEY7IVMjRljdd9dgDxiNtr1NF1BdY
+  url: "https://github.com/MaulingMonkey/crev-proofs"
+package:
+  source: "https://crates.io"
+  name: arrayvec
+  version: 0.4.7
+  digest: Qm8pnnLf79BuCjurE9DgtpJXFziWm70bA9u6D2s96Wk
+review:
+  thoroughness: high
+  understanding: medium
+  rating: negative
+comment: |
+  Prefer 0.4.11 which at least starts using MaybeUninit instead of uninitialized!(), which is fundamentally unsound.
+  Uses a disturbing amount of unsafe, but aside from uninitialized, it all at least appears to be correct after a careful reading.
+  Unlike smallvec, this doesn't fall back on the heap.
+  Better than whatever you'll write rolling your own, at least.
+  
+  Detail
+  ======
+  
+  | File                      | Rating | Notes |
+  | ------------------------- | ------ | ----- |
+  | benches/arraystring.rs    | +1    | |
+  | benches/extend.rs         | +1    | |
+  | src/array_string.rs       | 0     | lots of unsafe, but I think sound
+  | src/array.rs              | 0     | fix_array_impl! hides unsafe, but not misused nor public
+  | src/char.rs               | +1    | Relied upon for soundness... thoroughly checked against https://en.wikipedia.org/wiki/UTF-8
+  | src/errors.rs             | +1    | |
+  | src/lib.rs                | 0     | lots of unsafe, but I think sound
+  | src/range.rs              | +1    | |
+  | tests/serde.rs            | +1    | |
+  | tests/tests.rs            | +1    | |
+  | .gitignore                | +1    | |
+  | .travis.yml               | +1    | |
+  | Cargo.toml                | +1    | |
+  | Cargo.toml.orig           | +1    | |
+  | custom.css                | +1    | |
+  | LICENSE-APACHE            | +1    | |
+  | LICENSE-MIT               | +1    | |
+  | README.rst                | +1    | |
+  
+  
+  | Other     | Rating | Notes |
+  | --------- | ------ | ----- |
+  | unsafe    | -1    | Overused
+  | fs        | +1    | Unused
+  | docs      | +1    | |
+  | tests     | 0     | Good coverage... not seeing any fuzz testing for all this unsafe though.
+  
+  
+  
+  src/array_string.rs 
+  -------------------
+  
+  ### OK
+  
+  | Line  | Notes |
+  | -----:| ----- |
+  | 56    | unsafe - new_array ~ uninitialized, Array is an unsafe trait though so only implement it if this is sound...?
+  | 95    | No CapacityError?  Inconsistent vs from...
+  | 160   | unsafe { ... } - looks correct
+  | 213   | unsafe { ... } - looks correct
+  | 216   | could be a slice copy instead
+  | 245   | unsafe { ... } - looks correct
+  | 271   | unsafe { ... } - looks correct
+  | 307   | unsafe { ... } - looks correct
+  | 318   | unsafe { ... } - looks correct
+  | 331   | unsafe fn - decent docs, looks correct, should be more explicit about uninitialized though
+  | 342   | unsafe fn - needs better docs, but looks correct
+  | 351   | unsafe { ... } - looks correct
+  | 361   | unsafe { ... } - scary transmute, but just from &mut [u8] to &mut str.  stdlib from_utf8_unchecked does equivalent pointer casts
+  
+  src/array.rs 
+  -------------------
+  
+  | Line  | Notes     |
+  | -----:| --------- |
+  | 80    | Aieee!    |
+  | 132   | unsafe { ... } - not sure this is sound for bools etc.
+  | 214   | unsafe { ... } - looks correct
+  | 246   | unsafe fn - exactly as spceified
+  | 306   | unsafe { ... } - looks correct
+  | 340   | unsafe { ... } - looks correct
+  | 511   | unsafe fn - exactly as specified
+  | 552   | unsafe { ... } - scary as heck... but Drain should keep self borrowed long enough, at least.
+  | 575   | unsafe { ... } - looks correct
+  | 604   | unsafe { ... } - looks correct
+  | 614   | unsafe { ... } - looks correct
+  | 707   | unsafe { ... } - looks correct.  Size could be reduced, relies on IntoIter's custom drop not dropping copied elements due to the index increment to avoid double drops.
+  | 724   | unsafe { ... } - looks correct.  Size could be reduced, relies on IntoIter's custom drop not dropping copied elements due to the length decrement to avoid double drops.
+  | 740   | unsafe { ... } - looks correct.  Implements the aforementioned IntoIter custom drop.
+  | 764   | unsafe Sync - I believe this is OK.
+  | 765   | unsafe Send - I believe this is OK.
+  | 775   | unsafe { ... } - looks correct.  Relies on set_len already being truncated to avoid double drops.
+  | 793   | unsafe { ... } - looks correct.  Relies on set_len already being truncated to avoid double drops.
+  | 809   | necessary to aovid memory leaks
+  | 812   | unsafe { ... } - looks correct.
+  | 851   | unsafe { ... } - looks correct.
+  | 1008  | unsafe { ... } - looks correct.
+-----BEGIN CREV PACKAGE REVIEW SIGNATURE-----
+JQ73XJUfRATtGvZHLCmRJjj6jzKk7MnlkymHTu6NzvPHGlAY5xI3FD-yMsBfM71dKCcNxaTDCsKUldXnyNt5Ag
+-----END CREV PACKAGE REVIEW-----
+
