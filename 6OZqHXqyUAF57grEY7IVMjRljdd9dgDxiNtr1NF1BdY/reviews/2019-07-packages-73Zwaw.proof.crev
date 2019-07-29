@@ -1473,3 +1473,83 @@ comment: |
 zBAXx5QW_NNmLBRS_sr4rnp0k0ncU9zCOxc1GZTDGyEYzUUBNhGcgT-4aDake8QWe_vK2utGSIMDkraHCpY-AA
 -----END CREV PACKAGE REVIEW-----
 
+-----BEGIN CREV PACKAGE REVIEW-----
+version: -1
+date: "2019-07-28T18:52:03.963719700-07:00"
+from:
+  id-type: crev
+  id: 6OZqHXqyUAF57grEY7IVMjRljdd9dgDxiNtr1NF1BdY
+  url: "https://github.com/MaulingMonkey/crev-proofs"
+package:
+  source: "https://crates.io"
+  name: gimli
+  version: 0.15.0
+  digest: gw7OXjt0MmQVhmS8O_JLkieH_tUjvRxJ4ayh99ypGCg
+review:
+  thoroughness: low
+  understanding: medium
+  rating: positive
+comment: |
+  Looks nice and solid.  Well documented, well tested, code coverage, safe + sound.
+  Large crate - so I haven't taken the time to thoroughly audit everything - but I have at least skimmed over all code.
+  I've written some of my own partial DWARF parser in C++ in the past... parts look appropriately familiar.
+  
+  Detail
+  ======
+  
+  | File                                      | Rating | Notes |
+  | ----------------------------------------- | ------:| ----- |
+  | benches/bench.rs                          | +1    | fs
+  | examples/dwarfdump.rs                     | +1    | fs
+  | fixtures/self/*                           |       | unreviewed binary data (used in test fixtures, probably OK)
+  | fixtures/self/README.md                   | +1    | |
+  | releases/friends.sh                       | +1    | |
+  | releases/release-announcement-template.md | +1    | |
+  | src/abbrev.rs                             | +1    | |
+  | src/aranges.rs                            | +1    | |
+  | src/cfi.rs                                | +1    | |
+  | src/constants.rs                          | +1    | |
+  | src/endianity.rs                          | +1    | |
+  | src/leb128.rs                             | +1    | |
+  | src/lib.rs                                | +1    | |
+  | src/line.rs                               | +1    | |
+  | src/loc.rs                                | +1    | |
+  | src/lookup.rs                             | +1    | |
+  | src/op.rs                                 | +1    | |
+  | src/parser.rs                             | +1    | |
+  | src/pubnames.rs                           | +1    | |
+  | src/pubtypes.rs                           | +1    | |
+  | src/ranges.rs                             | +1    | |
+  | src/reader.rs                             | +1    | |
+  | src/str.rs                                | +1    | |
+  | src/test_util.rs                          | +1    | |
+  | src/unit.rs                               | +1    | |
+  | tests/parse_self.rs                       | +1    | |
+  | .cargo-ok                                 | +1    | |
+  | .gitignore                                | +1    | |
+  | .travis.yml                               | 0     | I haven't reviewed travis-cargo |
+  | Cargo.toml                                | +1    | |
+  | Cargo.toml.orig                           | +1    | |
+  | CONTRIBUTING.md                           | +1    | |
+  | coverage                                  | +1    | |
+  | format                                    | +1    | |
+  | LICENSE-APACHE                            | +1    | |
+  | LICENSE-MIT                               | +1    | |
+  | README.md                                 | +1    | |
+  | rustfmt.toml                              | +1    | |
+  
+  | Other     | Rating | Notes |
+  | --------- | ------ | ----- |
+  | unsafe    | +1    | Single `match unsafe { memmap::Mmap::map(&file) }` |
+  | fs        | +1    | Safe, only used in benches/examples/tests
+  | io        | +1    | Some io::{stderr, Error, Write} - all sane
+  | docs      | +1    | Lots of 'em!
+  | tests     | +1    | Lots of 'em!
+  
+  TIL
+  ===
+  travis-cargo
+-----BEGIN CREV PACKAGE REVIEW SIGNATURE-----
+fDTUlHvCnevshrOf3-2SGAPO-6Bc8QN63nZu7TumufH2q-kTsTad-zOvOd25MKNMcF6DFvcs8eFwOao3oBKPBA
+-----END CREV PACKAGE REVIEW-----
+
