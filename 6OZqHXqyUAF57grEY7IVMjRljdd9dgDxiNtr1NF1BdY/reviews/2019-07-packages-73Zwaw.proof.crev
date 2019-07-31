@@ -2141,3 +2141,25 @@ comment: |
 izJs8M8HsyykDaveW6rKikjU9k0KAJVNCRn_arLnbZsh8d1sBRCLdCi06XQyCG-xNrnSdtLRexxDDCa3D1T0Bg
 -----END CREV PACKAGE REVIEW-----
 
+-----BEGIN CREV PACKAGE REVIEW-----
+version: -1
+date: "2019-07-31T16:03:28.971401700-07:00"
+from:
+  id-type: crev
+  id: 6OZqHXqyUAF57grEY7IVMjRljdd9dgDxiNtr1NF1BdY
+  url: "https://github.com/MaulingMonkey/crev-proofs"
+package:
+  source: "https://crates.io"
+  name: podio
+  version: 0.1.6
+  digest: LnsfgA9FWKhFK8GirfINrXGvXhPzXRU51mQqHq-lPvo
+review:
+  thoroughness: low
+  understanding: medium
+  rating: positive
+comment: |
+  Solid looking, 100% safe.  Only concern is CI scripts downloading random URLs.
+-----BEGIN CREV PACKAGE REVIEW SIGNATURE-----
+ysXGOt0innXTYUxkhyvZfBEoXk4JsRDIsSPfYIqkbn2NXV68KkgnmkZQoR8Q2dKPo08vQ2j6KqkQUiaHRKb_Dg
+-----END CREV PACKAGE REVIEW-----
+
