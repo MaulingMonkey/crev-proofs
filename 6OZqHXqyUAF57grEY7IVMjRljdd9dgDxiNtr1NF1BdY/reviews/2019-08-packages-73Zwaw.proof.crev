@@ -295,3 +295,52 @@ comment: |
 DzF2USRezKmZoKst5-T8tZkuqHgJpds0LMbRwaegUpgTEW7nqxtFhROUk2GM7d1qYfkXt_h1EG571kmioYteBw
 -----END CREV PACKAGE REVIEW-----
 
+-----BEGIN CREV PACKAGE REVIEW-----
+version: -1
+date: "2019-08-30T09:14:27.646575400-07:00"
+from:
+  id-type: crev
+  id: 6OZqHXqyUAF57grEY7IVMjRljdd9dgDxiNtr1NF1BdY
+  url: "https://github.com/MaulingMonkey/crev-proofs"
+package:
+  source: "https://crates.io"
+  name: memalloc
+  version: 0.1.0
+  digest: TNURiDE9U7f_yKrlaONv0zgHPnohbmaGtrRiF5o0vx8
+review:
+  thoroughness: medium
+  understanding: medium
+  rating: negative
+comment: |
+  API design is super brittle.  Returning uninitialized memory seems like UB-bait.
+  
+  Detail
+  ======
+  
+  | File                                          | Rating | Notes |
+  | --------------------------------------------- | ------ | ----- |
+  | [src/lib.rs](src/lib.rs)                      | -1    | Soundish, but unsafe as heck APIs.
+  | .cargo-ok                                     | +1    | |
+  | .gitignore                                    | +1    | |
+  | .travis.yml                                   | +1    | |
+  | Cargo.toml                                    | +1    | |
+  | README.md                                     | +1    | |
+  
+  | Other     | Rating | Notes |
+  | --------- | ------ | ----- |
+  | unsafe    | -1 | Soundish, but unsafe as heck API design.
+  | fs        | +1 | None
+  | io        | +1 | None
+  | docs      | +1 | |
+  | tests     | +1 | |
+  
+  src/lib.rs
+  ----------
+  | Line  | What  | Notes |
+  | -----:| ----- | ----- |
+  | 23    | allocate      | This looks like it returns uninitialized memory (only sizes capacity not actual size).  UB bait.  Unaligned.
+  | 38    | reallocate    | Minimal debug checks, constructs Vec from_raw_parts with size when the real vec had size 0.
+-----BEGIN CREV PACKAGE REVIEW SIGNATURE-----
+anBTUCsO1Ndbb7MXaQbbfONAZTjjPwJGR8T5OoUTQlmieeorIThX0-sWeak3YyI38vT41Y1xLE3MUffhysTJDA
+-----END CREV PACKAGE REVIEW-----
+
