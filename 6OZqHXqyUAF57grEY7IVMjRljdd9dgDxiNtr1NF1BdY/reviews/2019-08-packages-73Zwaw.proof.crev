@@ -271,3 +271,27 @@ comment: |
 B9E2l1I0tMq4PXob9GWkYTWj7i4thnqKAdDRNMKFXHOjCrZrBrysPV05-097BUK3unufmde608VjGfyrTdnQBA
 -----END CREV PACKAGE REVIEW-----
 
+-----BEGIN CREV PACKAGE REVIEW-----
+version: -1
+date: "2019-08-30T09:03:24.412165200-07:00"
+from:
+  id-type: crev
+  id: 6OZqHXqyUAF57grEY7IVMjRljdd9dgDxiNtr1NF1BdY
+  url: "https://github.com/MaulingMonkey/crev-proofs"
+package:
+  source: "https://crates.io"
+  name: void
+  version: 1.0.2
+  digest: mmRZ15GpboF6sor0NdT0l1MKzJ4m3nPj7LCaRTxUzfs
+review:
+  thoroughness: medium
+  understanding: medium
+  rating: positive
+comment: |
+  Trivial uninhabited type.  LGTM.
+  
+  No unsafe, no I/O, single lib.rs source file, decent docs.
+-----BEGIN CREV PACKAGE REVIEW SIGNATURE-----
+DzF2USRezKmZoKst5-T8tZkuqHgJpds0LMbRwaegUpgTEW7nqxtFhROUk2GM7d1qYfkXt_h1EG571kmioYteBw
+-----END CREV PACKAGE REVIEW-----
+
