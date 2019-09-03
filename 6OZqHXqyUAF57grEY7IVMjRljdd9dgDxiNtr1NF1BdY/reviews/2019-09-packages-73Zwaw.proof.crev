@@ -426,3 +426,71 @@ comment: |
 Vq7md231i9xbc2Fuxu_iH35WOQKlHohL-mtOKc1v2E_ZLkxjtm6R7N3jyqIjw4zy_3t0lf_8QySAQtenRXteDA
 -----END CREV PACKAGE REVIEW-----
 
+-----BEGIN CREV PACKAGE REVIEW-----
+version: -1
+date: "2019-09-03T11:29:55.770920200-07:00"
+from:
+  id-type: crev
+  id: 6OZqHXqyUAF57grEY7IVMjRljdd9dgDxiNtr1NF1BdY
+  url: "https://github.com/MaulingMonkey/crev-proofs"
+package:
+  source: "https://crates.io"
+  name: require_unsafe_in_body
+  version: 0.2.0-alpha
+  revision: 23c74e9e01621e331851d2f810150b9241ef94a7
+  digest: oUa3rwD3LvMZt2KMy7p9XBY_-Jf5z-JRbg-gsHYw30o
+review:
+  thoroughness: medium
+  understanding: low
+  rating: positive
+comment: |
+  0.2.0-alpha:  Significant refactoring, adding support for generics.  LGTM?
+  0.1.2:  Seems solid, although my syn-fu is weak, limiting my ability to review this.
+  
+  Detail
+  ======
+  
+  | File                                          | Rating | Notes |
+  | --------------------------------------------- | ------ | ----- |
+  | src/docs/require_unsafe_in_bodies.md          | +1 | |
+  | src/docs/require_unsafe_in_body.md            | +1 | |
+  | src/utils/macros.rs                           | +1 | |
+  | src/utils/mod.rs                              | +1 | |
+  | src/lib.rs                                    | +1 | understanding: low - I'm barely following along
+  | src/tests.rs                                  | +1 | |
+  | tests/ui/body_on_method_2.rs                  | +1 | |
+  | tests/ui/body_on_method_2.stderr              | +1 | |
+  | tests/ui/body_on_method.rs                    | +1 | |
+  | tests/ui/body_on_method.stderr                | +1 | |
+  | tests/ui/readme.rs                            | +1 | |
+  | tests/ui/readme.stderr                        | +1 | |
+  | tests/impl_method_2.rs                        | +1 | The cfgs on unit-tests look the wrong way around?
+  | tests/impl_method.rs                          | +1 | The cfgs on unit-tests look the wrong way around?
+  | tests/trait_default_method.rs                 | +1 | The cfgs on unit-tests look the wrong way around?
+  | tests/ui.rs                                   | +1 | The cfgs on unit-tests look the wrong way around?
+  | .cargo_vcs_info.json                          | +1 | |
+  | .cargo-ok                                     | +1 | |
+  | .gitignore                                    | +1 | |
+  | Cargo.toml                                    | +1 | MIT
+  | Cargo.toml.orig                               | +1 | MIT
+  | LICENSE                                       | +1 | MIT
+  | Makefile                                      | +1 | Unixy
+  | README.md                                     | +1 | |
+  
+  | Other     | Rating | Notes |
+  | --------- | ------ | ----- |
+  | unsafe    | +1    | Wrangles unsafe but doesn't actually use it itself
+  | fs        | +1    | None
+  | io        | +1    | Modifies codegen through syn
+  | docs      | +1    | |
+  | tests     | +1    | |
+  
+  TIL
+  ---
+  ```rs
+  let Struct { ref member, ref mut member2, .. } = to_destructure;
+  ```
+-----BEGIN CREV PACKAGE REVIEW SIGNATURE-----
+8FN3bd_sDtrrpXXA9gGdXe5gPSYXDfyqA-UsAN7ef22COyrKdJjD7qPy-Z9XnH8yVT87cXnbhTXXbE584g3WBw
+-----END CREV PACKAGE REVIEW-----
+
