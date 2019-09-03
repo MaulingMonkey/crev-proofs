@@ -795,3 +795,33 @@ comment: |
 hMPd_BrWla3bQKc2DAshtlITnSfRD24vTNdxJ2lQHf9_yms_p4DlNrHaMynbc9U0xlvYghH8Gxv3Xp7Z804WDg
 -----END CREV PACKAGE REVIEW-----
 
+-----BEGIN CREV PACKAGE REVIEW-----
+version: -1
+date: "2019-09-03T12:14:03.152727500-07:00"
+from:
+  id-type: crev
+  id: 6OZqHXqyUAF57grEY7IVMjRljdd9dgDxiNtr1NF1BdY
+  url: "https://github.com/MaulingMonkey/crev-proofs"
+package:
+  source: "https://crates.io"
+  name: autocfg
+  version: 0.1.6
+  revision: 0f87a09a981694844b6f36f105c69d228b772f4f
+  digest: 4lc9vVY0Lry7N__5WNBeHUCCfrz3OXbeaGpfr3xXnFk
+package-diff-base:
+  source: "https://crates.io"
+  name: autocfg
+  version: 0.1.5
+  revision: 81ea9f3120f20d684fb97fe90f2848f137519dfc
+  digest: AD50FL3HnA4bDSzoE0-Ga3Lr5K-4Mw-LqEwQQRNMa0U
+review:
+  thoroughness: medium
+  understanding: medium
+  rating: positive
+comment: |
+  0.1.6:  LGTM
+  0.1.5:  No unsafe code, minor safe-looking file I/O
+-----BEGIN CREV PACKAGE REVIEW SIGNATURE-----
+U9UYpAJTXruQy9cLZN6oS7EKGEpkuQ9g7Cf27u7PrLksadj7SBRYH2C4pvBPpWIfRVcUGRAvdQsS8QdJl2CyDQ
+-----END CREV PACKAGE REVIEW-----
+
