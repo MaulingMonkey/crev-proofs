@@ -750,3 +750,48 @@ comment: |
 KZoetE2dJ7Rcn6Z_oprLII4A6Y3IaYK-UPPNwUn8uFpwpPHHoVXrWacwNGm-OAycj7gzSgI2pfWy-aughKnqDw
 -----END CREV PACKAGE REVIEW-----
 
+-----BEGIN CREV PACKAGE REVIEW-----
+version: -1
+date: "2019-09-03T11:37:52.203782400-07:00"
+from:
+  id-type: crev
+  id: 6OZqHXqyUAF57grEY7IVMjRljdd9dgDxiNtr1NF1BdY
+  url: "https://github.com/MaulingMonkey/crev-proofs"
+package:
+  source: "https://crates.io"
+  name: dinghy-build
+  version: 0.4.12
+  revision: 86168d7d01de47f06741cd6430ff9af71b13a4c2
+  digest: twtDrhKvr5oxpDt61eNL0u42kj49cmH2RGpEAEsFhRA
+package-diff-base:
+  source: "https://crates.io"
+  name: dinghy-build
+  version: 0.4.11
+  revision: 1fa5b89b2bb50264a5fd93d9791b843763cf7682
+  digest: 70P30qFd_VRtAAJO0wqEDS2TWJFXeQT3T-eQKFXZP7A
+review:
+  thoroughness: medium
+  understanding: low
+  rating: positive
+comment: |
+  0.4.12:  Trivial version bumps.
+  0.4.11
+  Some of the build/path stuff seems a little off... but might be correct?
+  All safe code, no security problems.
+  
+  Reviewed:
+  
+      src\build_env.rs    +1
+      src\build.rs        +1
+      src\lib.rs          0
+          102 Is this really correct for specifying the *host* environment?
+          105 ..
+      src\utils.rs        0
+          14  Isn't this generating /../../../ ?  Doesn't seem right...
+  
+      Cargo.toml          +1
+      Cargo.toml.orig     +1
+-----BEGIN CREV PACKAGE REVIEW SIGNATURE-----
+hMPd_BrWla3bQKc2DAshtlITnSfRD24vTNdxJ2lQHf9_yms_p4DlNrHaMynbc9U0xlvYghH8Gxv3Xp7Z804WDg
+-----END CREV PACKAGE REVIEW-----
+
