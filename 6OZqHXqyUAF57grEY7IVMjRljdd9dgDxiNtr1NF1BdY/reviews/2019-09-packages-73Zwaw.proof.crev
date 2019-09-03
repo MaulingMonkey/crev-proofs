@@ -321,3 +321,33 @@ comment: |
 raGWyoOiRbsdX4c-qsXMmwq-ndTQadVUKykxQbprgZrEa2hamkgDTCMR-1yny44oX3I_3O6UlzFLwy2jWWkCCQ
 -----END CREV PACKAGE REVIEW-----
 
+-----BEGIN CREV PACKAGE REVIEW-----
+version: -1
+date: "2019-09-03T10:42:32.035056700-07:00"
+from:
+  id-type: crev
+  id: 6OZqHXqyUAF57grEY7IVMjRljdd9dgDxiNtr1NF1BdY
+  url: "https://github.com/MaulingMonkey/crev-proofs"
+package:
+  source: "https://crates.io"
+  name: lazy_static
+  version: 1.4.0
+  revision: 421669662b35fcb455f2902daed2e20bbbba79b6
+  digest: 95REZRx8ItDao_V9l7sOsW9-OB6Jc5C7azc9mNC07fI
+package-diff-base:
+  source: "https://crates.io"
+  name: lazy_static
+  version: 1.3.0
+  revision: 03f62910a94886987cdb686c7509bbdc846481e3
+  digest: 21bjQkc4fD-Kvjb0xv1fN7M4oaembbxoEDirmvOQwbg
+review:
+  thoroughness: high
+  understanding: high
+  rating: positive
+comment: |
+  1.4.0:  Read diff, looks fine.
+  1.3.0:  Read all of src, skimmed all of tests.  core_lazy.rs looks a little odd, but is 100% safe code - any issues would be in it's core dependency, spin.  inline_lazy.rs contains unsafe blocks... look safe, but downgrades rating to merely positive.  lib.rs is just safe macros.  Tests all pass.
+-----BEGIN CREV PACKAGE REVIEW SIGNATURE-----
+bW-yCt94w53nltaweNxVLUbUSU6ad8w5h7y_7EbEtdf4TJI7WE9tIitsychEig-ocoOQlHiRj74flYQiELoXAw
+-----END CREV PACKAGE REVIEW-----
+
