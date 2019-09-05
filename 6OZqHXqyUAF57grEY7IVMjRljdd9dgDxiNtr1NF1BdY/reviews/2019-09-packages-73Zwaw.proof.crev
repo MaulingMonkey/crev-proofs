@@ -1049,3 +1049,93 @@ comment: |
 UiPJg_upDgoDFQKgRd5gx6ThhJQYK7a0WDNdwX24UbJE0SW5sWEEHmpT0eq4w6LjtRF4ta9G3zeKSL70WxSlBw
 -----END CREV PACKAGE REVIEW-----
 
+-----BEGIN CREV PACKAGE REVIEW-----
+version: -1
+date: "2019-09-05T12:23:36.815798200-07:00"
+from:
+  id-type: crev
+  id: 6OZqHXqyUAF57grEY7IVMjRljdd9dgDxiNtr1NF1BdY
+  url: "https://github.com/MaulingMonkey/crev-proofs"
+package:
+  source: "https://crates.io"
+  name: tiled-json-rs
+  version: 0.2.6
+  revision: 7969464b0bd04471e920d9b5ff825efbf835f08f
+  digest: PQ-E8KGi2DKLrvyTGC75JETHI8pShfeB7LO4rmXi7rw
+review:
+  thoroughness: medium
+  understanding: medium
+  rating: negative
+issues:
+  - id: "https://gitlab.com/ljcode/tiled-json-rs/issues/1"
+    severity: high
+    comment: Path traversal attacks?
+  - id: "https://gitlab.com/ljcode/tiled-json-rs/issues/2"
+    severity: medium
+    comment: Panic on bad data (DoS source via UGC?)
+comment: |
+  Do not use on User Generated Content!
+  * Vulnerable to path traversal attacks if fed bogus .tmx files (see Tileset::new_reference)
+  * A couple cases where bad input will panic, a potential DoS vector.
+  
+  For game engines, there's also no great way to inject your own virtual filesystem callbacks (again see Tileset::new_reference)
+  
+  Pros:
+  * JSON is lighter weight than XML
+  * Fuller format support vs tiled
+  
+  Cons:
+  * No compression
+  * API is just as raw in many ways
+  * Requires exporting.
+  * Slightly unusual license for rust projects (MPL, instead of MIT/Apache 2)
+  
+  Detail
+  ======
+  
+  | File                                          | Rating | Notes |
+  | --------------------------------------------- | ------ | ----- |
+  | [src/layer.rs](src/layer.rs)                  | 0 | Raw structures
+  | src/lib.rs                                    | +1 | |
+  | src/map.rs                                    | +1 | |
+  | src/object.rs                                 | +1 | |
+  | [src/parsers.rs](src/parsers.rs)              | 0 | No decompression support, can panic (not suitable for user generated content)
+  | [src/tile_set.rs](src/tile_set.rs)            | -1 | Not suitable for user generated content!
+  | src/utils.rs                                  | +1 | |
+  | src/wangs.rs                                  | +1 | |
+  | .cargo_vcs_info.json                          | +1 | |
+  | .cargo-ok                                     | +1 | |
+  | Cargo.toml                                    | +1 | |
+  | Cargo.toml.orig                               | +1 | |
+  | LICENSE                                       | +1 | |
+  
+  | Other     | Rating | Notes |
+  | --------- | ------ | ----- |
+  | unsafe    | +1 | None
+  | fs        | -1 | Path traversal
+  | io        | +1 | serde
+  | docs      | +1 | |
+  | tests     |  0 | Not in crate, but found in repository (https://gitlab.com/ljcode/tiled-json-rs/tree/master/tests)
+  
+  src/layer.rs
+  ------------
+  | Line  | What  | Notes |
+  | -----:| ----- | ----- |
+  |  17   | TileLayer::chunks | Option seems kinda pointless, also this API is meh
+  | 129   | DrawOrder | There are at least 4 draw modes now for layers - although there's also Map / RenderOrder.... blehrg (top->down left->right, top->down right->left, ...)
+  
+  src/parsers.rs
+  --------------
+  | Line  | What  | Notes |
+  | -----:| ----- | ----- |
+  | 129   | parse_color blue | Despite earlier padding, no guarantee this is valid / may panic (both for overflowing and for not being a unicode boundary.)
+  
+  src/tile_set.rs
+  ---------------
+  | Line  | What  | Notes |
+  | -----:| ----- | ----- |
+  | 121   | Deserialize for TileSet | File::open - path traversal attacks, lack of virtual filesystem support, etc.
+-----BEGIN CREV PACKAGE REVIEW SIGNATURE-----
+U9LkaE4UOH6GbJhFDmwbNm4iOITSjvbuLOHBmMpf2FqhYsb5s7jfT7i2evPWA_Vx3nuxFrg8LvcHh4Xb6iJuBw
+-----END CREV PACKAGE REVIEW-----
+
