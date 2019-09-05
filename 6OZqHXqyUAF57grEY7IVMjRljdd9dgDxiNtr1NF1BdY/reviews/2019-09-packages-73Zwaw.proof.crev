@@ -1139,3 +1139,26 @@ comment: |
 U9LkaE4UOH6GbJhFDmwbNm4iOITSjvbuLOHBmMpf2FqhYsb5s7jfT7i2evPWA_Vx3nuxFrg8LvcHh4Xb6iJuBw
 -----END CREV PACKAGE REVIEW-----
 
+-----BEGIN CREV PACKAGE REVIEW-----
+version: -1
+date: "2019-09-05T15:33:53.100473500-07:00"
+from:
+  id-type: crev
+  id: 6OZqHXqyUAF57grEY7IVMjRljdd9dgDxiNtr1NF1BdY
+  url: "https://github.com/MaulingMonkey/crev-proofs"
+package:
+  source: "https://crates.io"
+  name: macro_rules_attribute-proc_macro
+  version: 0.0.1
+  revision: a8bc2725982dbfbfa60ffcb0305889d9e6d4fe5c
+  digest: _VgSABytmSyaU_F92vRUec8-M8NNQp4XIECjHOqFreU
+review:
+  thoroughness: medium
+  understanding: medium
+  rating: positive
+comment: |
+  Internal implementation detail crate of macro_rules_attribute.  Relatively trivial... LGTM.
+-----BEGIN CREV PACKAGE REVIEW SIGNATURE-----
+uuv4al-ZhctUK-f7wHc16HBYjRU_LR4-h5H1i1lJ8wnVZurT94ERb-swPRAfw_9e9hFMyXI29JYa4rAiYLpMCw
+-----END CREV PACKAGE REVIEW-----
+
