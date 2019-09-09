@@ -1244,3 +1244,47 @@ comment: |
 dzDu2Umyu95RSQ6qoai_bWoAFgbNBINw-z1fj452AoegW_oZkAWZ5FobOO-KutbA-uZ1hmWKVZ5Z-2EZMQhmBg
 -----END CREV PACKAGE REVIEW-----
 
+-----BEGIN CREV PACKAGE REVIEW-----
+version: -1
+date: "2019-09-09T11:36:13.226067700-07:00"
+from:
+  id-type: crev
+  id: 6OZqHXqyUAF57grEY7IVMjRljdd9dgDxiNtr1NF1BdY
+  url: "https://github.com/MaulingMonkey/crev-proofs"
+package:
+  source: "https://crates.io"
+  name: cargo-dinghy
+  version: 0.4.13
+  revision: 2b73150d29fdd8e8e86a3de54a28a75f6dc38b15
+  digest: RRAVghkhaf8N01-fzMW8Pi7sOvKYXe9O7znreQX5xx4
+package-diff-base:
+  source: "https://crates.io"
+  name: cargo-dinghy
+  version: 0.4.12
+  revision: c7153e4cf9b1694c49385057633ab5ad6b602b38
+  digest: WqfZMcbmdwcOg6mLIp2wyihDrMINHBXIxun-uQfUCfc
+review:
+  thoroughness: low
+  understanding: medium
+  rating: positive
+comment: |
+  0.4.13: Trivial version bumps.
+  0.4.12: Trivial version bumps.
+  0.4.11: Nice and solid looking code.  100% safe code.
+  
+  Reviewed:
+      src\cli.rs:         +1
+      src\main.rs:        +1
+          151 run_lldb
+              Nonterminating loops are problematic, but I think the side effects here should make this work OK?
+              (see https://github.com/rust-lang/rust/issues/28728 )
+      Cargo.toml:         +1
+      Cargo.toml.orig:    +1
+          13  readme path references unpackaged readme
+  
+  TIL:
+      Using traits to extend clap::App so flags can be reused per-subcommand is interesting.
+-----BEGIN CREV PACKAGE REVIEW SIGNATURE-----
+x0enf4heRps6ORFl2r_Qe33UWjb5T8lLldm4eu1T6euVhDrdx63Xm8OwzubMV1Cl20sRtXv-LBPjqY2OxhlKAA
+-----END CREV PACKAGE REVIEW-----
+
