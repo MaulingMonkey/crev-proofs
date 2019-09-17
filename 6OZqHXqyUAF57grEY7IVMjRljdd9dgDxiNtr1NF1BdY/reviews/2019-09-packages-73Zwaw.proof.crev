@@ -2305,3 +2305,50 @@ comment: |
 XgWQSZfCEWj8RJWadxapbg-utSzdh-irG6lCQRnKLyyKDVPMuBlW6HphkgyOeNKiVOD3JeOcWsRazLAyYR-cAQ
 -----END CREV PACKAGE REVIEW-----
 
+-----BEGIN CREV PACKAGE REVIEW-----
+version: -1
+date: "2019-09-17T12:21:51.869509600-07:00"
+from:
+  id-type: crev
+  id: 6OZqHXqyUAF57grEY7IVMjRljdd9dgDxiNtr1NF1BdY
+  url: "https://github.com/MaulingMonkey/crev-proofs"
+package:
+  source: "https://crates.io"
+  name: cargo-dinghy
+  version: 0.4.16
+  revision: ddeac04631eb11cb4d0e5d635df48e4dd72cecc2
+  digest: QrODDMVdsPYOssL-BakJfFXygxLNisSI4Ot2At8vrmA
+package-diff-base:
+  source: "https://crates.io"
+  name: cargo-dinghy
+  version: 0.4.15
+  revision: b9d207b57ca3f5cafadf7a7d540d41eea4022271
+  digest: _OQIM7YkwqsWZOvmWX5qBHyDQ0TFK_JrRb_d7kL61Xw
+review:
+  thoroughness: low
+  understanding: medium
+  rating: positive
+comment: |
+  0.4.16: Trivial version bumps.
+  0.4.15: Trivial version bumps.
+  0.4.14: Trivial version bumps, mass reformatting.
+  0.4.13: Trivial version bumps.
+  0.4.12: Trivial version bumps.
+  0.4.11: Nice and solid looking code.  100% safe code.
+  
+  Reviewed:
+      src\cli.rs:         +1
+      src\main.rs:        +1
+          151 run_lldb
+              Nonterminating loops are problematic, but I think the side effects here should make this work OK?
+              (see https://github.com/rust-lang/rust/issues/28728 )
+      Cargo.toml:         +1
+      Cargo.toml.orig:    +1
+          13  readme path references unpackaged readme
+  
+  TIL:
+      Using traits to extend clap::App so flags can be reused per-subcommand is interesting.
+-----BEGIN CREV PACKAGE REVIEW SIGNATURE-----
+mFbYD9_lM8z6alFX2xELkr9S9gfQ8kLdL9cYzDhK2-axE9pgBgWmi2-eLpSneGyQ2zqEHdh5YxCuotRzDgzgCw
+-----END CREV PACKAGE REVIEW-----
+
