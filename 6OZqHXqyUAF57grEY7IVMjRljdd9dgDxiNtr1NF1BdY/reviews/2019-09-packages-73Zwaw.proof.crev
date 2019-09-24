@@ -3065,3 +3065,66 @@ comment: |
 D6MPZtLfzOJ9UmqFFdtAR8YrSFnJ5985CfRZuhobXppiYPLWAJrqq9i1l--P_SHD6HeP3uQfJos_p1uz8iW8BA
 -----END CREV PACKAGE REVIEW-----
 
+-----BEGIN CREV PACKAGE REVIEW-----
+version: -1
+date: "2019-09-24T07:58:23.190730800-07:00"
+from:
+  id-type: crev
+  id: 6OZqHXqyUAF57grEY7IVMjRljdd9dgDxiNtr1NF1BdY
+  url: "https://github.com/MaulingMonkey/crev-proofs"
+package:
+  source: "https://crates.io"
+  name: cargo-edit
+  version: 0.4.0
+  revision: 8f8028e90fb535f09d07751570cb607cd040a257
+  digest: 454DZ0hOB4kIBQ3qj94hv89MN-vOBEf5IsR5hoTwTQk
+package-diff-base:
+  source: "https://crates.io"
+  name: cargo-edit
+  version: 0.3.3
+  revision: ad517e456fe901d32c5033d586d9cd67b2a7a335
+  digest: ZLLOIq-75CktDhfqmSWOZr2_F9rRdlyjxDgAM4CyNV0
+review:
+  thoroughness: low
+  understanding: medium
+  rating: neutral
+comment: |
+  Add/remove/update Cargo.toml dependencies from the command line.
+  
+  Pros:
+  * Safe, probably works
+  
+  Cons:
+  * Lots of code
+  * Lots of dependencies, some of which I haven't fully audited.
+  * License ambiguity (is this MIT or Apache-2.0/MIT licensed?)
+  
+  0.4.0
+  =====
+  | crev          |   |
+  | ------------- |---|
+  | thoroughness  | low
+  | understanding | medium
+  | rating        | neutral
+  
+  | Diff                                                  | Rating | Notes |
+  | ----------------------------------------------------- | ------ | ----- |
+  | Cargo.lock                                            | +1 | Added since 0.3.3, enabling frozen installs.  Approx [200 indirect deps](https://github.com/killercup/cargo-edit/blob/e131c92b8e1d5617fb9dca2e095ed7d7c91776ae/Cargo.lock#L1819).
+  | Cargo.toml                                            | +1 | Version bumps
+  | Cargo.toml.orig                                       | +1 | Version bumps
+  | README.md                                             | +1 | Mentions new `--sort` option
+  | appveyor.yml                                          | +1 | Disables gnu targets
+  | src/bin/add/args.rs                                   | +1 | New `--sort` and `--offline` options
+  | src/bin/add/main.rs                                   | +1 | |
+  | src/bin/upgrade/main.rs                               | +1 | |
+  | src/errors.rs                                         | +1 | |
+  | src/fetch.rs                                          | +1 | |
+  | src/lib.rs                                            | +1 | |
+  | src/manifest.rs                                       | +1 | |
+  | src/registry.rs                                       | +1 | |
+  | tests/cargo-add.rs                                    | +1 | |
+  | tests/fixtures/add/Cargo.toml.unsorted                | +1 | |
+-----BEGIN CREV PACKAGE REVIEW SIGNATURE-----
+5JUoJX5qg9cYzNHEjOT30s9SFnM3aeQ0hOG4Hr_TwoLe2sNbcqcMbSPYA90yvWecMMg3LgzBen-ItUXGO3t0CA
+-----END CREV PACKAGE REVIEW-----
+
