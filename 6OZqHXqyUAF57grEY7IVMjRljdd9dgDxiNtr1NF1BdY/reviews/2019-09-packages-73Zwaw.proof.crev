@@ -3188,3 +3188,31 @@ comment: |
 xNFaCUobAsw-JWq3JBl1jUiMEuyijJI-5d_P8cTc4UfBFlo2ieT0GXSAIEwLVIFIr03m1GMTS8L64tw1f2hWDQ
 -----END CREV PACKAGE REVIEW-----
 
+-----BEGIN CREV PACKAGE REVIEW-----
+version: -1
+date: "2019-09-25T14:41:28.389206600-07:00"
+from:
+  id-type: crev
+  id: 6OZqHXqyUAF57grEY7IVMjRljdd9dgDxiNtr1NF1BdY
+  url: "https://github.com/MaulingMonkey/crev-proofs"
+package:
+  source: "https://crates.io"
+  name: cfg-if
+  version: 0.1.10
+  revision: 4484a6faf816ff8058088ad857b0c6bb2f4b02b2
+  digest: 8G3k47B_-Vb15yCM466l9Xi4MZIALe6o2egoIhh3CMU
+package-diff-base:
+  source: "https://crates.io"
+  name: cfg-if
+  version: 0.1.9
+  digest: gDrZ_GLiGjle6RhSqttA6kWgzJsLrkIOE_in6us34N0
+review:
+  thoroughness: low
+  understanding: low
+  rating: positive
+comment: |
+  Macro black magic... I trust the author and what I do understand looks good.
+-----BEGIN CREV PACKAGE REVIEW SIGNATURE-----
+AK1WTT1gqRKzY6eiS5Y8qrb76_meYTyq3Vwe4r_k-RLveglGCgDX7qCy9AosNnNphyPPI34y2mTloS0w2njBBA
+-----END CREV PACKAGE REVIEW-----
+
