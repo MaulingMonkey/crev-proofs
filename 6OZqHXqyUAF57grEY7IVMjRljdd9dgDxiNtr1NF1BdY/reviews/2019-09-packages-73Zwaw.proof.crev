@@ -3216,3 +3216,59 @@ comment: |
 AK1WTT1gqRKzY6eiS5Y8qrb76_meYTyq3Vwe4r_k-RLveglGCgDX7qCy9AosNnNphyPPI34y2mTloS0w2njBBA
 -----END CREV PACKAGE REVIEW-----
 
+-----BEGIN CREV PACKAGE REVIEW-----
+version: -1
+date: "2019-09-25T15:24:19.548200900-07:00"
+from:
+  id-type: crev
+  id: 6OZqHXqyUAF57grEY7IVMjRljdd9dgDxiNtr1NF1BdY
+  url: "https://github.com/MaulingMonkey/crev-proofs"
+package:
+  source: "https://crates.io"
+  name: arrayvec
+  version: 0.5.0
+  revision: ea591bc2de5202790c600638c96efa392413001c
+  digest: 3r8WHcSBZQlVWMztXEoti0owtKbDkZujK9--6_TNlgM
+package-diff-base:
+  source: "https://crates.io"
+  name: arrayvec
+  version: 0.4.11
+  revision: 97925027920f7a284774f76a48c3126297d2fd13
+  digest: KpEAh6TMg7CZJEN4AtElrISdVHCISCfvU4-w4eEeoFg
+review:
+  thoroughness: medium
+  understanding: medium
+  rating: neutral
+comment: |
+  Stack/value variable length arrays without heap fallback.
+  
+  Pros:
+  * Maybe sound?
+  * Better than what you'll write.
+  
+  Cons:
+  * History of unsoundness (0.4.10 and earlier)
+  * Disturbing amounts of unsafe
+  
+  | Diff                          | Rating | Notes |
+  | ----------------------------- | ------ | ----- |
+  | .cargo_vs_info.json           | +1 | |
+  | .travis.yml                   | +1 | MSRV bumped to 1.36.0, features tweaked.
+  | Cargo.toml                    | +1 | feature "serde-1" -> "serde", 2018 edition, drop cruft
+  | Cargo.toml.orig               | +1 | |
+  | README.rst                    | 0  | "(not yet released)" no longer accurate.
+  | benches/extend.rs             | +1 | +black_box
+  | build.rs                      | +1 | Dropped?
+  | src/array.rs                  | +1 | Improved safety docs, although could use more explaination of what relies on the invariants.  () and bool indexing for 1/2-len arrays.
+  | src/array_string.rs           | 0  | mem::zeroed -> MaybeUninitCopy::uninitialized.  Lots of Copy constraints, one transmute -> from_utf8_unchecked_mut (safer).
+  | src/lib.rs                    | 0  | truncate now unsafe (but sound), new try_extend_from_slice is unsafe (but sound).  ArrayVec::extend ZST handling is obtuse, would be unsound in C++, but I believe sound in Rust, maybe?
+  | src/maybe_uninit.rs           | +1 | |
+  | src/maybe_uninit_nodrop.rs    | +1 | Removed
+  | src/maybe_uninit_stable.rs    | +1 | Removed
+  | src/range.rs                  | +1 | Removed
+  | tests/serde.rs                | +1 | |
+  | tests/tests.rs                | +1 | New test cases
+-----BEGIN CREV PACKAGE REVIEW SIGNATURE-----
+S6cNAOkEEIZhkADOOSLaNLQ6VX2Qw6LCsAP9xPNmFmekNdPjlD2oNu_GFac-SFDYaHG-V2B5WmjVl1Xn8Ht-DA
+-----END CREV PACKAGE REVIEW-----
+
