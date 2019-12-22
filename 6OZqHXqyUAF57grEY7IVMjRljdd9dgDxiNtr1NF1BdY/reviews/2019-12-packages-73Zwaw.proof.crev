@@ -27,3 +27,57 @@ comment: |
 Bw2uPGJ4UUWTJgAHVM8-bWN46tgv1o2OVSwqyDQrweZPfG19yymp-pba_CrTSEYRDj2UFFxnWrDZdKQKz9CgBA
 -----END CREV PACKAGE REVIEW-----
 
+-----BEGIN CREV PACKAGE REVIEW-----
+version: -1
+date: "2019-12-22T13:28:24.373305-08:00"
+from:
+  id-type: crev
+  id: 6OZqHXqyUAF57grEY7IVMjRljdd9dgDxiNtr1NF1BdY
+  url: "https://github.com/MaulingMonkey/crev-proofs"
+package:
+  source: "https://crates.io"
+  name: arrayvec
+  version: 0.5.1
+  revision: 6905bdbb8a873c3e5c965833b56e494b26b1c816
+  digest: ILW_2oyKH_-rucIHtJl5LhYsU6TihosxsC_rkGsNS2g
+package-diff-base:
+  source: "https://crates.io"
+  name: arrayvec
+  version: 0.5.0
+  revision: ea591bc2de5202790c600638c96efa392413001c
+  digest: 3r8WHcSBZQlVWMztXEoti0owtKbDkZujK9--6_TNlgM
+review:
+  thoroughness: medium
+  understanding: medium
+  rating: neutral
+comment: |
+  Stack/value variable length arrays without heap fallback.
+  
+  Pros:
+  * Maybe sound?
+  * Better than what you'll write.
+  
+  Cons:
+  * History of unsoundness (0.4.10 and earlier)
+  * Disturbing amounts of unsafe
+  
+  This version switched some slices possibly containing uninit (UB!) to use
+  pointers instead.  This makes `encode_utf8` unsafe, sadly.
+  
+  | Diff                                  | Rating | Notes |
+  | ------------------------------------- | ------ | ----- |
+  | .cargo_vcs_info.json                  | +1 | |
+  | .gitignore                            | +1 | |
+  | Cargo.lock                            | +1 | Rust version bump?
+  | Cargo.toml                            | +1 | debug \[profile.*\]
+  | Cargo.toml.orig                       | +1 | debug \[profile.*\]
+  | README.rst                            | +1 | |
+  | *.{events,string_data,string_index}   | 0 | Binary test files, unreviewed
+  | src/array.rs                          | +1 | Removed `#[inline]`
+  | src/array_string.rs                   | +1 | Added `fn len`, removed `#[inline]`, use ptr instead of slice
+  | src/chars.rs                          | +1 | `encode_utf8` is now sadly unsafe, more test coverage
+  | src/lib.rs                            | +1 | Inline tweaks, more (correct) ptr use, add `as_*_ptr` to match Vec (safe/sound)
+-----BEGIN CREV PACKAGE REVIEW SIGNATURE-----
+nDa9-CK_qxjSLfVeQRYItD4Z4IUBkA_lnm2SGznk70DS13IyoC0hTXD8VJD-SmJP5ZyXS7UviEOMfihS_KasAg
+-----END CREV PACKAGE REVIEW-----
+
