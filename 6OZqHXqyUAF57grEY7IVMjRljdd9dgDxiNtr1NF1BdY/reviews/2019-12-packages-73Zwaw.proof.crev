@@ -160,3 +160,58 @@ comment: |
 xOl1-vY7DRu46Bhpe_CUj1CTOGGmtjKcY_VxUc7LwEvlKrox9KfgcDZJAEnR-Qd4LXT8uNsFxX_LmUfaWpT_DA
 -----END CREV PACKAGE REVIEW-----
 
+-----BEGIN CREV PACKAGE REVIEW-----
+version: -1
+date: "2019-12-22T14:08:03.631440800-08:00"
+from:
+  id-type: crev
+  id: 6OZqHXqyUAF57grEY7IVMjRljdd9dgDxiNtr1NF1BdY
+  url: "https://github.com/MaulingMonkey/crev-proofs"
+package:
+  source: "https://crates.io"
+  name: cargo_metadata
+  version: 0.9.1
+  revision: b0402002af3009a6143d3fdc29d6d15dac4dcd3c
+  digest: OIum-_Y1WW_4qWt0tP_Ku5ZOLWgkr0AsLwefd33SECw
+package-diff-base:
+  source: "https://crates.io"
+  name: cargo_metadata
+  version: 0.9.0
+  revision: b540f76635a023a100a5e354902c520657396ed0
+  digest: The4fIJhIakKU4pwoJMHqWeGBNATanQzCYDWsj5jP7g
+review:
+  thoroughness: medium
+  understanding: medium
+  rating: positive
+comment: |
+  Parse `cargo metadata` and `cargo build --message-format=json` output.
+  
+  Pros:
+  * Way better than parsing it yourself
+  * Safe code
+  
+  Cons:
+  * If you're feeling particularly paranoid, `cargo metadata` could be passed bad
+    feature names (see 0.8.2 review for details)
+  
+  0.9.1
+  =====
+  | crev          |   |
+  | ------------- |---|
+  | thoroughness  | medium
+  | understanding | medium
+  | rating        | positive
+  
+  | Diff                                          | Rating | Notes |
+  | --------------------------------------------- | ------ | ----- |
+  | .cargo_vcs_info.json                          | +1 | |
+  | Cargo.toml                                    | +1 | |
+  | Cargo.toml.orig                               | +1 | |
+  | src/dependency.rs                             | +1 | |
+  | src/lib.rs                                    | +1 | |
+  | src/messages.rs                               | +1 | |
+  | tests/test_samples.rs                         | +1 | |
+-----BEGIN CREV PACKAGE REVIEW SIGNATURE-----
+SjtBZBF5iRDHI66CxiHZMzgpcldgKnIjFAd4tv6SA5zcqA9q6FbPTLbX_pmzZA44MDvDJmUsVcjiwEcAxk5hCA
+-----END CREV PACKAGE REVIEW-----
+
