@@ -215,3 +215,27 @@ comment: |
 SjtBZBF5iRDHI66CxiHZMzgpcldgKnIjFAd4tv6SA5zcqA9q6FbPTLbX_pmzZA44MDvDJmUsVcjiwEcAxk5hCA
 -----END CREV PACKAGE REVIEW-----
 
+-----BEGIN CREV PACKAGE REVIEW-----
+version: -1
+date: "2019-12-27T17:54:56.169076900-08:00"
+from:
+  id-type: crev
+  id: 6OZqHXqyUAF57grEY7IVMjRljdd9dgDxiNtr1NF1BdY
+  url: "https://github.com/MaulingMonkey/crev-proofs"
+package:
+  source: "https://crates.io"
+  name: rustversion
+  version: 1.0.0
+  revision: 7c6a94656b240a7805d6cb56a3db5fc78fce644d
+  digest: R21QOxs6cL2f3liNj0rxiY6Mv2IziE5QyszqWACEws0
+review:
+  thoroughness: high
+  understanding: medium
+  rating: positive
+comment: |
+  Excellent looking crate.
+  Full notes:  https://github.com/MaulingMonkey/rust-reviews/blob/master/reviews/rustversion.md#100
+-----BEGIN CREV PACKAGE REVIEW SIGNATURE-----
+CaqqPUFe_pROmc3nSPfD2lKRYSLEJF8cQCzSNJD7Fenfs9kB5XUiHOiMeDEBqu9lpapCdUgGqRdeFDjFL3IqAQ
+-----END CREV PACKAGE REVIEW-----
+
