@@ -353,3 +353,31 @@ comment: |
 1W9jRPw8ydJp-S0KfFIaQsSRi3JHNeA2YSI3uyDcsMTzPmlaMVt_vJH-Ls23Wh7XxucPWQOrecPMhnvuSHQ3CA
 -----END CREV PACKAGE REVIEW-----
 
+-----BEGIN CREV PACKAGE REVIEW-----
+version: -1
+date: "2019-12-27T22:19:20.963581300-08:00"
+from:
+  id-type: crev
+  id: 6OZqHXqyUAF57grEY7IVMjRljdd9dgDxiNtr1NF1BdY
+  url: "https://github.com/MaulingMonkey/crev-proofs"
+package:
+  source: "https://crates.io"
+  name: foreign-types
+  version: 0.5.0
+  revision: c5a90ed3f39dd5fe8b5af6e9cee1bc446746272c
+  digest: mbGgx9JxPmINeyuLCMiXEmPBD247VZKf5YCn8hPvvKs
+review:
+  thoroughness: none
+  understanding: medium
+  rating: neutral
+advisories:
+  - ids:
+      - "https://github.com/sfackler/foreign-types/issues/10"
+    severity: high
+    comment: ""
+comment: |
+  https://github.com/MaulingMonkey/rust-reviews/blob/master/reviews/foreign-types.md#050
+-----BEGIN CREV PACKAGE REVIEW SIGNATURE-----
+7cP8G3eyV6A4yFHXWTbjxtygSk022FFjjm5SF_0cSbeiMu8vT5iOd5yPzAZWbFNdtNbI6_shqgioNCCuSm2vBA
+-----END CREV PACKAGE REVIEW-----
+
