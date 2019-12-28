@@ -297,3 +297,32 @@ comment: |
 5SG0txPDiTYPL4oHpCvmqD4kgygmCJq4s9Gaivvd1C_LBTeCM78JpfaIqkmlTkqWlVOLm5rODAkq9AhdWk1iCg
 -----END CREV PACKAGE REVIEW-----
 
+-----BEGIN CREV PACKAGE REVIEW-----
+version: -1
+date: "2019-12-27T21:55:26.928305600-08:00"
+from:
+  id-type: crev
+  id: 6OZqHXqyUAF57grEY7IVMjRljdd9dgDxiNtr1NF1BdY
+  url: "https://github.com/MaulingMonkey/crev-proofs"
+package:
+  source: "https://crates.io"
+  name: inventory
+  version: 0.1.5
+  revision: 743744731fe6c5afbf12d0486a64cfa05fb8d58d
+  digest: 4X9J5_0qce07YmjhqZfbD5EUG2fTNbhGVOcE80ny7lU
+review:
+  thoroughness: high
+  understanding: high
+  rating: positive
+advisories:
+  - ids:
+      - "https://github.com/dtolnay/inventory/pull/15"
+    severity: high
+    comment: Soundness fix
+comment: |
+  Great crate.  Doesn't work with WASM.
+  https://github.com/MaulingMonkey/rust-reviews/blob/master/reviews/inventory.md#015
+-----BEGIN CREV PACKAGE REVIEW SIGNATURE-----
+9r13pepwse9OrZwq6VEGfdPiiOJSFPSjax3DO2idNEFlIqURvKSralHIlPwxDUvZ6fDc0GREQ_dZ7q10PCFMAA
+-----END CREV PACKAGE REVIEW-----
+
