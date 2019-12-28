@@ -326,3 +326,30 @@ comment: |
 9r13pepwse9OrZwq6VEGfdPiiOJSFPSjax3DO2idNEFlIqURvKSralHIlPwxDUvZ6fDc0GREQ_dZ7q10PCFMAA
 -----END CREV PACKAGE REVIEW-----
 
+-----BEGIN CREV PACKAGE REVIEW-----
+version: -1
+date: "2019-12-27T22:15:36.546437-08:00"
+from:
+  id-type: crev
+  id: 6OZqHXqyUAF57grEY7IVMjRljdd9dgDxiNtr1NF1BdY
+  url: "https://github.com/MaulingMonkey/crev-proofs"
+package:
+  source: "https://crates.io"
+  name: foreign-types
+  version: 0.4.0
+  revision: 263ab4afdb1268073e1cbbf010768198fae388ec
+  digest: KwDZcumPuuS0gstJ0jE_YQWmcrfQ9YAa8j1g0ebC5BA
+review:
+  thoroughness: low
+  understanding: medium
+  rating: negative
+issues:
+  - id: "https://github.com/sfackler/foreign-types/issues/10"
+    severity: medium
+    comment: Hides unsound C APIs without user-facing unsafe keyword
+comment: |
+  https://github.com/MaulingMonkey/rust-reviews/blob/master/reviews/foreign-types.md#040--032
+-----BEGIN CREV PACKAGE REVIEW SIGNATURE-----
+1W9jRPw8ydJp-S0KfFIaQsSRi3JHNeA2YSI3uyDcsMTzPmlaMVt_vJH-Ls23Wh7XxucPWQOrecPMhnvuSHQ3CA
+-----END CREV PACKAGE REVIEW-----
+
