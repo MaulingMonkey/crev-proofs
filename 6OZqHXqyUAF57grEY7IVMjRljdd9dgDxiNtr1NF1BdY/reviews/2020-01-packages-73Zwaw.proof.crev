@@ -20,3 +20,30 @@ comment: |
 7s3lEwsAa2Eg2KnFCg7aedBFZu-Xhl2yfXS_0KyOuXGPbMdLtGWEx3Z94uhtIrL-MhkiDwQPZGZTHsjOZRoRDQ
 -----END CREV PACKAGE REVIEW-----
 
+-----BEGIN CREV PACKAGE REVIEW-----
+version: -1
+date: "2020-01-08T12:29:29.603295700-08:00"
+from:
+  id-type: crev
+  id: 6OZqHXqyUAF57grEY7IVMjRljdd9dgDxiNtr1NF1BdY
+  url: "https://github.com/MaulingMonkey/crev-proofs"
+package:
+  source: "https://crates.io"
+  name: proc-macro-crate
+  version: 0.1.1
+  digest: Uv0bdQUtFXHezhaLW1rJdSpp_hokPBxn8XQHdmh2cfw
+package-diff-base:
+  source: "https://crates.io"
+  name: proc-macro-crate
+  version: 0.1.0
+  digest: HBsfV66jwBnJ3XvNTshwysV_0Pz9ECesg_i6JHmO2bY
+review:
+  thoroughness: medium
+  understanding: medium
+  rating: positive
+comment: |
+  https://github.com/MaulingMonkey/rust-reviews/blob/master/reviews/proc-macro-crate.md#011
+-----BEGIN CREV PACKAGE REVIEW SIGNATURE-----
+_W_tfL6ObdedpRwq5gkV-EDNDUD9blbjimL9NwNo7r35421rb4AgLzQVKkEsp_xWZltSNgZfs9XikI59cmS_CQ
+-----END CREV PACKAGE REVIEW-----
+
