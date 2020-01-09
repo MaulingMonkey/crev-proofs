@@ -133,3 +133,28 @@ comment: |
 FCrSpH9EGgl20JNE4wZakTQXHl67qmdmn6W0O1_d7sHecH6At_k4lEOSF9EcoW6tk5_1Wv7hBC9xo1PJ78F4Dw
 -----END CREV PACKAGE REVIEW-----
 
+-----BEGIN CREV PACKAGE REVIEW-----
+version: -1
+date: "2020-01-09T00:01:33.845091-08:00"
+from:
+  id-type: crev
+  id: 6OZqHXqyUAF57grEY7IVMjRljdd9dgDxiNtr1NF1BdY
+  url: "https://github.com/MaulingMonkey/crev-proofs"
+package:
+  source: "https://crates.io"
+  name: microprofile
+  version: 0.2.1
+  revision: 2746d44bbc40cbb32b9739e381590c21af025ebe
+  digest: pJ8MaWnSZIvgFEFR-9SskHwqoyK0RqYOyeCyVstq1bU
+review:
+  thoroughness: low
+  understanding: low
+  rating: negative
+comment: |
+  https://github.com/MaulingMonkey/rust-reviews/blob/master/reviews/microprofile.md#021
+  Decent seeming crate, but 98% underdocumented underfuzzed C++ that is network exposed, parses strings, rewrites x86, etc.
+  Might use for development but using it in production would just be begging for CVEs.
+-----BEGIN CREV PACKAGE REVIEW SIGNATURE-----
+sntxJYbMElPmNMnu_cQEjTVZP8RkQYBF32p4MlqRoOYhp3T58ACGNw8B5wOWL7okMhFX9iuKYKuwrqNHL2j5BA
+-----END CREV PACKAGE REVIEW-----
+
