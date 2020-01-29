@@ -158,3 +158,26 @@ comment: |
 sntxJYbMElPmNMnu_cQEjTVZP8RkQYBF32p4MlqRoOYhp3T58ACGNw8B5wOWL7okMhFX9iuKYKuwrqNHL2j5BA
 -----END CREV PACKAGE REVIEW-----
 
+-----BEGIN CREV PACKAGE REVIEW-----
+version: -1
+date: "2020-01-29T13:50:02.698058500-08:00"
+from:
+  id-type: crev
+  id: 6OZqHXqyUAF57grEY7IVMjRljdd9dgDxiNtr1NF1BdY
+  url: "https://github.com/MaulingMonkey/crev-proofs"
+package:
+  source: "https://crates.io"
+  name: lazycell
+  version: 1.2.0
+  digest: ak-Z5ZcDwhK2OGpRfOdMIP0VHoSDC58290c_xWtibzI
+review:
+  thoroughness: high
+  understanding: medium
+  rating: positive
+comment: |
+  https://github.com/MaulingMonkey/rust-reviews/blob/master/reviews/lazycell.md#1.2.0
+  Appears quite high quality, only the minimum necessary amount of unsafe code used.
+-----BEGIN CREV PACKAGE REVIEW SIGNATURE-----
+5EjS7bBGuk6NwNNunggSWrpDM8vOJWNqj_mwFqvr0qB19yT0CRtByDnvKHHTxeczEU8sIUmUcw9kdxsprOQJAQ
+-----END CREV PACKAGE REVIEW-----
+
