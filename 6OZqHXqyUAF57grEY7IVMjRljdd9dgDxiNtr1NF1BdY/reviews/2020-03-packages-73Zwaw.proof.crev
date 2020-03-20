@@ -1,0 +1,24 @@
+-----BEGIN CREV PACKAGE REVIEW-----
+version: -1
+date: "2020-03-19T19:15:17.287207400-07:00"
+from:
+  id-type: crev
+  id: 6OZqHXqyUAF57grEY7IVMjRljdd9dgDxiNtr1NF1BdY
+  url: "https://github.com/MaulingMonkey/crev-proofs"
+package:
+  source: "https://crates.io"
+  name: ase
+  version: 0.1.0
+  revision: f0112b3f20a30e20ecf699c64e9ad0465777de04
+  digest: d73KhmGK22dMeYSppTP1tecGENpEh4RCRMpNmD4cNr8
+review:
+  thoroughness: medium
+  understanding: medium
+  rating: neutral
+comment: |
+  Not suitable for UGC - memory exhaustion and panic concerns.
+  https://github.com/MaulingMonkey/rust-reviews/blob/master/reviews/ase.md#0.1.0
+-----BEGIN CREV PACKAGE REVIEW SIGNATURE-----
+VpSY38D1qbcdaSFob-oTADxUEg8W6hufusAUnEapt2cVZA_fvHBZuBxZzy4cSvfHPgm2GoWtGWboKfj-Bg8SBg
+-----END CREV PACKAGE REVIEW-----
+
