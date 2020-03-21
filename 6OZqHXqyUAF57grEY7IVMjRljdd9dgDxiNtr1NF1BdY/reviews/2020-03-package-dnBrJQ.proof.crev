@@ -287,3 +287,33 @@ comment: |-
 5B3zMDUQbGb3ECNiCOJg8bFtyo6fklaPGqzVABm_L9hkUkxGo2y_UZfGXc4yUjjVhbC7LNDBxAOsciY1d2CVDg
 ----- END CREV PROOF -----
 
+----- BEGIN CREV PROOF -----
+kind: package review
+version: -1
+date: "2020-03-21T12:15:13.041541300-07:00"
+from:
+  id-type: crev
+  id: 6OZqHXqyUAF57grEY7IVMjRljdd9dgDxiNtr1NF1BdY
+  url: "https://github.com/MaulingMonkey/crev-proofs"
+package:
+  source: "https://crates.io"
+  name: num_enum_derive
+  version: 0.4.1
+  revision: 10cb1c62a5ba6bcbec076c1feb159c445e6f4ac5
+  digest: CKVCQR_XrRB-2D-IZbiC9cGolz7ymAEYPUGkxZQTJr4
+package-diff-base:
+  source: "https://crates.io"
+  name: num_enum_derive
+  version: 0.4.0
+  revision: adf8d8ad9f47d3d5be7396b8ff731bb32452345f
+  digest: YGlVVTcnUUIttv7Ldnl0W7DgMtr1n2i6CHxBCJEIDus
+review:
+  thoroughness: low
+  understanding: medium
+  rating: positive
+comment: |-
+  https://github.com/MaulingMonkey/rust-reviews/blob/master/reviews/num_enum_derive.md#0.4.1
+----- SIGN CREV PROOF -----
+boNO54WtmwKrk1UICfOIi2mMwKwjfVdTwJWG1S2GbZsHQKGhuDV7BBE6xpX4i3OdHANyk_cOxlxSZa-jC6UPAg
+----- END CREV PROOF -----
+
