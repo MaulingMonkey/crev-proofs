@@ -1,0 +1,23 @@
+----- BEGIN CREV PROOF -----
+kind: package review
+version: -1
+date: "2020-06-18T11:43:47.153267600-07:00"
+from:
+  id-type: crev
+  id: 6OZqHXqyUAF57grEY7IVMjRljdd9dgDxiNtr1NF1BdY
+  url: "https://github.com/MaulingMonkey/crev-proofs"
+package:
+  source: "https://crates.io"
+  name: codepage-437
+  version: 0.1.0
+  digest: N0gNSyJmNeAlqym9OSvGOvMSMURCmv4jtasdxByMnoU
+review:
+  thoroughness: medium
+  understanding: medium
+  rating: positive
+comment: |-
+  https://github.com/MaulingMonkey/rust-reviews/blob/master/reviews/codepage-437.md#0.1.0
+----- SIGN CREV PROOF -----
+yqqZKzA2Y7jJPpCmGdmOq5gDVH1WcaGT4ZpSY1aMfoS0XHo8Exe9R2wEv3g4lVgFT5ClrRC-7fJ7jbdx-8IDDA
+----- END CREV PROOF -----
+
