@@ -1,0 +1,43 @@
+----- BEGIN CREV PROOF -----
+kind: package review
+version: -1
+date: "2020-07-23T01:31:34.006039700-07:00"
+from:
+  id-type: crev
+  id: 6OZqHXqyUAF57grEY7IVMjRljdd9dgDxiNtr1NF1BdY
+  url: "https://github.com/MaulingMonkey/crev-proofs"
+package:
+  source: "https://crates.io"
+  name: egl
+  version: 0.2.7
+  digest: VR-uiEXO2XbtT0LBETeRNM8wF6IxT9TI5KlOvO70rD4
+review:
+  thoroughness: none
+  understanding: medium
+  rating: negative
+issues:
+  - id: none
+    severity: high
+    comment: "Unsound as heck, unmaintained."
+flags:
+  unmaintained: true
+alternatives:
+  - source: "https://crates.io"
+    name: glutin_egl_sys
+  - source: "https://crates.io"
+    name: egli
+  - source: "https://crates.io"
+    name: khronos-egl
+comment: |-
+  AVOID. This crate is unsound as fuck, and abandoned.
+  
+  Alternatives:
+  * <code>[khronos-egl](https://lib.rs/crates/khronos-egl)</code> is a sounder, maintained fork.
+  * <code>[egli](https://lib.rs/crates/egli)</code> is an alternative, supposedly sound API with low and high level APIs.
+  * <code>[glutin_egl_sys](https://lib.rs/crates/glutin_egl_sys)</code> uses `gl_generator` to provide low level `unsafe` API structs.
+  
+  https://github.com/MaulingMonkey/rust-reviews/blob/master/reviews/egl.md
+----- SIGN CREV PROOF -----
+aRohrm1SGdi411J1STx1ch8H54ZjnVvEoKmChoUyiEaID2Tte-_7-NW8wMapgFKgWgcfBVcvKI8Ax66E-FL7Aw
+----- END CREV PROOF -----
+
