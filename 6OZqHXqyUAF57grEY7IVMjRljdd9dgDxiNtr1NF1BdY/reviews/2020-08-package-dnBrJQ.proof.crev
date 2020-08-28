@@ -23,3 +23,28 @@ comment: |-
 LkBwS4fK8VsmMbCAbEWYQvNX3J-nMpvNZypNpL9XrQyNsa4E-0dGEIOAXouuRWtmA7Iir5CBguNtUuA-bsnBAg
 ----- END CREV PROOF -----
 
+----- BEGIN CREV PROOF -----
+kind: package review
+version: -1
+date: "2020-08-27T23:29:42.817945-07:00"
+from:
+  id-type: crev
+  id: 6OZqHXqyUAF57grEY7IVMjRljdd9dgDxiNtr1NF1BdY
+  url: "https://github.com/MaulingMonkey/crev-proofs"
+package:
+  source: "https://crates.io"
+  name: byteorder
+  version: 0.3.8
+  digest: 842X_UnnTs2Np2P-CLyrwhTJscDAemeqFjDSxTO8mf0
+advisories:
+  - ids:
+      - "https://github.com/rust-lang/rust/issues/22776"
+    severity: high
+    range: major
+    comment: "Unsound: dangling pointer `bytes` in `write_num_bytes!`"
+comment: |-
+  Part of my [byteorder](https://github.com/MaulingMonkey/rust-reviews/blob/master/reviews/byteorder.md) audit
+----- SIGN CREV PROOF -----
+GjCIReGgjXnk-Zb6ohXI9esDy1bzVkVXtc0XZXYK57oLCingf3suKd541631HpJxzVzyIcrFOHbRL-BkBoXfCA
+----- END CREV PROOF -----
+
