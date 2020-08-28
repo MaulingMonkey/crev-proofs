@@ -98,3 +98,39 @@ comment: |-
 5rj5AI6V0mfu50BtEJ7TCVgDY6J0MYJ0R4NIRmKtHeZ7obCN5Kd4c3alsHqn6cw-yLdm5t6TIXv4hpAXflJVDg
 ----- END CREV PROOF -----
 
+----- BEGIN CREV PROOF -----
+kind: package review
+version: -1
+date: "2020-08-27T23:37:45.706692400-07:00"
+from:
+  id-type: crev
+  id: 6OZqHXqyUAF57grEY7IVMjRljdd9dgDxiNtr1NF1BdY
+  url: "https://github.com/MaulingMonkey/crev-proofs"
+package:
+  source: "https://crates.io"
+  name: byteorder
+  version: 1.3.4
+  revision: eaaad370715c04d78334d6a5b49c637549c84c71
+  digest: xIXqrloZPnvGV1h16Xhz7zBbMyjI1ngxuzlfEDXRBi0
+review:
+  thoroughness: low
+  understanding: medium
+  rating: negative
+comment: |-
+  See [Full Audit](https://github.com/MaulingMonkey/rust-reviews/blob/master/reviews/byteorder.md)
+  
+  <h2>Pros</h2>
+  
+  * MSRV policy!
+  * Basic swizzling/endian stuff
+  * You didn't have to write it
+  
+  <h2>Cons</h2>
+  
+  * Excessive and distributed `unsafe` in serialization related code is hard to audit and makes me nervous
+  * History of unsoundness.  Most crate versions have alignment related bugs, and 0.2.x had overflow issues which regressed in 0.3.x.
+  * Very limited functionality
+----- SIGN CREV PROOF -----
+I1IImVnjvizseWL1Hi9rj4JHM6d9WBucdsPlgAIpqSGc54sSCW7m7IDh2_OZYfncA3ilNxf6lkzY-gcwZAcHBQ
+----- END CREV PROOF -----
+
