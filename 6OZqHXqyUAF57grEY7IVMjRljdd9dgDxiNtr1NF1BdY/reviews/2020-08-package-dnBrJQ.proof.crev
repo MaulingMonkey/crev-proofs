@@ -163,3 +163,39 @@ comment: |-
 36kuI32SJB3VDGqp4HZviygORS5RXJwG_YhNLAFCICfrnABvmlG-pfgdpLd3BWEJhFYGdZgNRFJvWCrMayuCBw
 ----- END CREV PROOF -----
 
+----- BEGIN CREV PROOF -----
+kind: package review
+version: -1
+date: "2020-08-28T01:42:08.945635500-07:00"
+from:
+  id-type: crev
+  id: 6OZqHXqyUAF57grEY7IVMjRljdd9dgDxiNtr1NF1BdY
+  url: "https://github.com/MaulingMonkey/crev-proofs"
+package:
+  source: "https://crates.io"
+  name: icon_baker
+  version: 3.2.0
+  revision: e5e763b88df2ddfc4bdcccfddd389eb93df39160
+  digest: tg4wP6aaxw2P1ZHAMHEgNcBjb7EUHDByNdUT9tWQKHI
+review:
+  thoroughness: medium
+  understanding: medium
+  rating: negative
+issues:
+  - id: "https://github.com/GarkGarcia/icon_baker/issues/11"
+    severity: high
+    comment: "`unsafe impl Send/Sync for Image {}` is unsound (can clone Rc from multiple threads)"
+comment: |-
+  Pros:
+  * Rescaling via `image`
+  * SVG rendering via `resvg`
+  * Pretty nifty and relatively comprehensive
+  
+  Cons:
+  * Unsound
+  
+  [Full Audit](https://github.com/MaulingMonkey/rust-reviews/blob/master/reviews/icon_baker.md)
+----- SIGN CREV PROOF -----
+IzkFjqry3IpYse76_sTpFmoT3BV7Y8FA8Oe1TKBh3q2jLvT8zbQyt5KqXYDxjkIiVfPZVm-PaGWsxVE4DcT9Dg
+----- END CREV PROOF -----
+
