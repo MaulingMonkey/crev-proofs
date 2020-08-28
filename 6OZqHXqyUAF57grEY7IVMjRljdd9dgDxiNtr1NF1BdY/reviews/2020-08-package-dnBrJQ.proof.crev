@@ -134,3 +134,32 @@ comment: |-
 I1IImVnjvizseWL1Hi9rj4JHM6d9WBucdsPlgAIpqSGc54sSCW7m7IDh2_OZYfncA3ilNxf6lkzY-gcwZAcHBQ
 ----- END CREV PROOF -----
 
+----- BEGIN CREV PROOF -----
+kind: package review
+version: -1
+date: "2020-08-28T00:23:00.377805600-07:00"
+from:
+  id-type: crev
+  id: 6OZqHXqyUAF57grEY7IVMjRljdd9dgDxiNtr1NF1BdY
+  url: "https://github.com/MaulingMonkey/crev-proofs"
+package:
+  source: "https://crates.io"
+  name: ico
+  version: 0.1.0
+  digest: BPc-hYBj5w74O3gecekz0T1n6In_6qX40EZC765JIrg
+review:
+  thoroughness: medium
+  understanding: high
+  rating: positive
+comment: |-
+  Encoders/decoders for .ico and .cur file formats.
+  
+  Pros:
+  * Well documented and ~complete despite 0.1.0 version
+  * Pure Rust
+  
+  [Full Audit](https://github.com/MaulingMonkey/rust-reviews/blob/master/reviews/ico.md)
+----- SIGN CREV PROOF -----
+36kuI32SJB3VDGqp4HZviygORS5RXJwG_YhNLAFCICfrnABvmlG-pfgdpLd3BWEJhFYGdZgNRFJvWCrMayuCBw
+----- END CREV PROOF -----
+
