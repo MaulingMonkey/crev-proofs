@@ -72,3 +72,29 @@ comment: |-
 m5mQeiMT39f1tk3G1DCgIqyNcrTEfECne15gjItIhy2CHb8NjM4CVKAZf51puQVnGHytYIiWoH-dsuIAwclGBQ
 ----- END CREV PROOF -----
 
+----- BEGIN CREV PROOF -----
+kind: package review
+version: -1
+date: "2020-08-27T23:36:25.732011300-07:00"
+from:
+  id-type: crev
+  id: 6OZqHXqyUAF57grEY7IVMjRljdd9dgDxiNtr1NF1BdY
+  url: "https://github.com/MaulingMonkey/crev-proofs"
+package:
+  source: "https://crates.io"
+  name: byteorder
+  version: 1.3.3
+  revision: db7a2e5652c69bc55155a2dab7a39ab767451662
+  digest: CpozfH1opw8kkgTQExSX4I3JSdfcOj2VhLLeb27murs
+advisories:
+  - ids:
+      - "https://github.com/BurntSushi/byteorder/pull/157"
+    severity: medium
+    range: major
+    comment: "Unsound: unaligned read for `read_uint`\\[`128`\\]"
+comment: |-
+  Part of my [byteorder](https://github.com/MaulingMonkey/rust-reviews/blob/master/reviews/byteorder.md) audit
+----- SIGN CREV PROOF -----
+5rj5AI6V0mfu50BtEJ7TCVgDY6J0MYJ0R4NIRmKtHeZ7obCN5Kd4c3alsHqn6cw-yLdm5t6TIXv4hpAXflJVDg
+----- END CREV PROOF -----
+
