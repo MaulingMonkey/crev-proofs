@@ -236,3 +236,33 @@ comment: |-
 SmUMbELJHntwcJHd5FdmTJRuMkXFpbFQdCg_s9UVNW9R-74aiUxQG0fAh4q5DURlKECGbSwGN5UOxS4HFNe3CQ
 ----- END CREV PROOF -----
 
+----- BEGIN CREV PROOF -----
+kind: package review
+version: -1
+date: "2020-08-29T20:02:39.506327-07:00"
+from:
+  id-type: crev
+  id: 6OZqHXqyUAF57grEY7IVMjRljdd9dgDxiNtr1NF1BdY
+  url: "https://github.com/MaulingMonkey/crev-proofs"
+package:
+  source: "https://crates.io"
+  name: icon-pie
+  version: 0.1.4-beta
+  revision: 34c251869d5d7f7e8c0fbd2bb2eeb905b5bff7ba
+  digest: xtlwJUxMoTfuAgnzqclM2LmCStJNX2eypw_OGmUual8
+review:
+  thoroughness: low
+  understanding: medium
+  rating: positive
+comment: |-
+  Pros:
+  * Rescaling via `image`
+  * SVG rendering via `resvg`
+  * Pretty nifty and relatively comprehensive
+  * `icon-pie`'s lack of multithreading makes `icon-pie` sound despite `icon_baker`'s bogus Send+Sync impls
+  
+  [Full Audit](https://github.com/MaulingMonkey/rust-reviews/blob/master/reviews/icon-pie.md)
+----- SIGN CREV PROOF -----
+tCLkGKotZyyxpKSyASttwpFPc_RWhegk_HYVkYRETdl5qgX3yb8R1cSmAmoFckv9M9eKP46szlsRKR5QMCLKBA
+----- END CREV PROOF -----
+
