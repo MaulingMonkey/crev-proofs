@@ -266,3 +266,26 @@ comment: |-
 tCLkGKotZyyxpKSyASttwpFPc_RWhegk_HYVkYRETdl5qgX3yb8R1cSmAmoFckv9M9eKP46szlsRKR5QMCLKBA
 ----- END CREV PROOF -----
 
+----- BEGIN CREV PROOF -----
+kind: package review
+version: -1
+date: "2020-08-30T00:06:17.379319200-07:00"
+from:
+  id-type: crev
+  id: 6OZqHXqyUAF57grEY7IVMjRljdd9dgDxiNtr1NF1BdY
+  url: "https://github.com/MaulingMonkey/crev-proofs"
+package:
+  source: "https://crates.io"
+  name: vfs
+  version: 0.1.0
+  digest: nMycuze87BSmbGCQ9DFITzkIOTuM9iVfoPG0rbwcj9Y
+review:
+  thoroughness: low
+  understanding: medium
+  rating: negative
+comment: |-
+  vfs 0.1.0 lacks a license.  Upgrade to 0.1.1+.  ([Full Audit](https://github.com/MaulingMonkey/rust-reviews/blob/master/reviews/vfs.md))
+----- SIGN CREV PROOF -----
+XeTNQKHqoT72xDfhjMKLLI2EnCZcYgfAXanKlGLzldg2GtKH_jRCBsnKHJR6lg5SHyKN9tPhKvFHc3qMEUWdAQ
+----- END CREV PROOF -----
+
