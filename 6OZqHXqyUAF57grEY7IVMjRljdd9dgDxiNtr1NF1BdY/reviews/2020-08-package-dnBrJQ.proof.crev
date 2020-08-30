@@ -312,3 +312,26 @@ comment: |-
 5Ka4PfuOXsfDGYWlayF1iHnRpXwt76Jeg6Md5pa-sZA6IjWV6IKMhS3L5DL9Rd_W1PezrAKWM3SKgJajSuD7Dw
 ----- END CREV PROOF -----
 
+----- BEGIN CREV PROOF -----
+kind: package review
+version: -1
+date: "2020-08-30T00:07:43.825766-07:00"
+from:
+  id-type: crev
+  id: 6OZqHXqyUAF57grEY7IVMjRljdd9dgDxiNtr1NF1BdY
+  url: "https://github.com/MaulingMonkey/crev-proofs"
+package:
+  source: "https://crates.io"
+  name: vfs
+  version: 0.1.2
+  digest: KVLg581l2CwTGABiAWCJ-zMxRDOjrfNJKL3sHtusEY4
+review:
+  thoroughness: low
+  understanding: medium
+  rating: positive
+comment: |-
+  Decent crate seeing some usage. Worth building upon.  ([Full Audit](https://github.com/MaulingMonkey/rust-reviews/blob/master/reviews/vfs.md))
+----- SIGN CREV PROOF -----
+OajeBhMFW4p_V3lnnfvaJlC_c8YDs1RVlzJygEzb0N2u-2FfmI8wrYsaR9553_GepGb9Xvr05kyqgnF8W9aaAg
+----- END CREV PROOF -----
+
