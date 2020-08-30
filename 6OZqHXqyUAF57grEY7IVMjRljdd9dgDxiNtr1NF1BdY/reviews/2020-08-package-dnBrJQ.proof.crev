@@ -199,3 +199,40 @@ comment: |-
 IzkFjqry3IpYse76_sTpFmoT3BV7Y8FA8Oe1TKBh3q2jLvT8zbQyt5KqXYDxjkIiVfPZVm-PaGWsxVE4DcT9Dg
 ----- END CREV PROOF -----
 
+----- BEGIN CREV PROOF -----
+kind: package review
+version: -1
+date: "2020-08-29T19:22:28.329315100-07:00"
+from:
+  id-type: crev
+  id: 6OZqHXqyUAF57grEY7IVMjRljdd9dgDxiNtr1NF1BdY
+  url: "https://github.com/MaulingMonkey/crev-proofs"
+package:
+  source: "https://crates.io"
+  name: winres
+  version: 0.1.11
+  revision: 82f55f8b46ca7ac44971b6f14b5770ab5d65d8df
+  digest: gRi0AyWTFQYHDCbvC4sZEB3LOIOpYn7tL8T-SsNENhc
+review:
+  thoroughness: low
+  understanding: medium
+  rating: positive
+advisories:
+  - ids:
+      - "https://github.com/mxre/winres/issues/11"
+    severity: medium
+    range: major
+    comment: "https://github.com/mxre/winres/issues/11 was fixed perhaps as early as 0.1.8, but I would upgrade all the way to 0.1.11, where string escaping was tweaked again."
+comment: |-
+  Pros:
+  * Excellent!
+  * Easy `build.rs` integration
+  
+  Cons:
+  * Awkward to use outside of a `build.rs` context.
+  
+  See [Full Audit](https://github.com/MaulingMonkey/rust-reviews/blob/master/reviews/winres.md)
+----- SIGN CREV PROOF -----
+SmUMbELJHntwcJHd5FdmTJRuMkXFpbFQdCg_s9UVNW9R-74aiUxQG0fAh4q5DURlKECGbSwGN5UOxS4HFNe3CQ
+----- END CREV PROOF -----
+
