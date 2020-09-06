@@ -33,3 +33,38 @@ comment: |-
 vBavRFG_lUj1tq1qRV1RYdcKNXVBb_MzVia5x0l3FSe-EWbnzC1t96BuP25jStimN5IvR0vnDwU0Ih8j6BmtBA
 ----- END CREV PROOF -----
 
+----- BEGIN CREV PROOF -----
+kind: package review
+version: -1
+date: "2020-09-06T02:41:30.169182400-07:00"
+from:
+  id-type: crev
+  id: 6OZqHXqyUAF57grEY7IVMjRljdd9dgDxiNtr1NF1BdY
+  url: "https://github.com/MaulingMonkey/crev-proofs"
+package:
+  source: "https://crates.io"
+  name: waker-fn
+  version: 1.1.0
+  revision: f1419be1139111ecf8a1267468edb3e9e7ae46b1
+  digest: Ccn0e6uclXAyYcpB0RitkEMUx2fff_XpvNhk1ZzBV_I
+review:
+  thoroughness: high
+  understanding: high
+  rating: positive
+comment: |-
+  Basic 0-dependencies Fn-based [Waker] source.
+  
+  This could eventually be made safe when [Wake] (not [Waker]!) stabilizes.
+  In the meantime, this crate manually creates a [Waker] via [RawWaker].
+  This requires some `unsafe` code, but this crate appropriately uses just about
+  the bare minimum necessary to accomplish the task, and appears to do so soundly and correctly.
+  Additionally, the code is minimal (63 LOC including comments and whitespace for 1.1.0) and straightforward.
+  
+  [Wake]:     https://doc.rust-lang.org/std/task/trait.Wake.html
+  [Waker]:    https://doc.rust-lang.org/std/task/struct.Waker.html
+  [RawWaker]: https://doc.rust-lang.org/std/task/struct.RawWaker.html
+  [Full Audit](https://github.com/MaulingMonkey/rust-reviews/blob/master/reviews/waker-fn.md)
+----- SIGN CREV PROOF -----
+1gQfTGxF957DXOQM8X0zZT8iCTh65mBrF-xNeQ6MU060DngdtrfDRd4hnbOH41FY7Yc_9eVDlq0Zmj-3Y7zJDw
+----- END CREV PROOF -----
+
