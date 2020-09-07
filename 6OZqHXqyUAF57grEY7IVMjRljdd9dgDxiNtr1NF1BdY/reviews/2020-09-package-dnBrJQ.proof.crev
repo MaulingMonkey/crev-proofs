@@ -211,3 +211,45 @@ comment: |-
 2iLEAitzzChV1NFw-I-KWoAVLCLma9ceIMIQSiWQYs3zwadzR946ZjWL_QYO2BnKXLc6cgtnymZnFBcuUJk5Cw
 ----- END CREV PROOF -----
 
+----- BEGIN CREV PROOF -----
+kind: package review
+version: -1
+date: "2020-09-07T09:48:14.335471100-07:00"
+from:
+  id-type: crev
+  id: 6OZqHXqyUAF57grEY7IVMjRljdd9dgDxiNtr1NF1BdY
+  url: "https://github.com/MaulingMonkey/crev-proofs"
+package:
+  source: "https://crates.io"
+  name: threadpool
+  version: 0.2.0
+  digest: Mu50E-U6CHB_HCAMFtuj02RsIU1TCIaCf2IfQK355WY
+review:
+  thoroughness: medium
+  understanding: high
+  rating: positive
+advisories:
+  - ids:
+      - "https://github.com/rust-threadpool/rust-threadpool/pull/6"
+    severity: medium
+    comment: Removed unsound JoinGuard based ScopedPool API
+comment: |-
+  Simple basic thread pool
+  
+  Pros:
+  * Documented/tested MSRV
+  * Uses basic well tested mpsc channels
+  * No unsafe
+  * Well tested, documented, looks solid
+  
+  Cons:
+  * No high performance work stealing queues to break up sync points for work submission
+  * No auto-scaling options
+  * Ignores OS thread pools (which might have better auto-scaling magic)
+  * Unclamped use of frequently mad num_cpus crate could result in ThreadPool::default causing far too many threads resulting in OOM crashes.
+  
+  [Full Audit](https://github.com/MaulingMonkey/rust-reviews/blob/master/reviews/threadpool.md)
+----- SIGN CREV PROOF -----
+84eoF8kVHIP7bkLfKN0jI3qJZzwau6iVuiKsytF74HeVwpdM-eJ_xOeQ-d1zidTUkGqV1h_ePs0tgHjoDrkBDw
+----- END CREV PROOF -----
+
