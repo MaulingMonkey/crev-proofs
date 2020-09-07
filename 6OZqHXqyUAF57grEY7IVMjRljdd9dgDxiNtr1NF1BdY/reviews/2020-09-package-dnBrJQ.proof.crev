@@ -165,3 +165,49 @@ comment: |-
 XJHrahtAsz3S9ZiJmsmC8VG8CgGlRdJ5kWTCAyBx7ZORRpDHkRWfWbZaEksB6E3vgBFoeJyrs37TSqPxm4ffBA
 ----- END CREV PROOF -----
 
+----- BEGIN CREV PROOF -----
+kind: package review
+version: -1
+date: "2020-09-07T06:13:00.857997600-07:00"
+from:
+  id-type: crev
+  id: 6OZqHXqyUAF57grEY7IVMjRljdd9dgDxiNtr1NF1BdY
+  url: "https://github.com/MaulingMonkey/crev-proofs"
+package:
+  source: "https://crates.io"
+  name: num_cpus
+  version: 1.13.0
+  revision: b347731fc0c008dbb88b406c595b1e644458fffe
+  digest: ylzvHS5m2bNhDRIC9wOTfQgoBRWDZsjZ6-_ITvjCx2A
+review:
+  thoroughness: low
+  understanding: low
+  rating: positive
+comment: |-
+  Queries the OS for the number of CPU cores you have.
+  
+  Pros:
+  *   You didn't have to write it.
+  *   Handles all that hideously platform specific nonsense for you.
+  
+  Cons:
+  *   Lots of (necessary) `unsafe`
+  *   Linux cgroups support seems wildly overcomplicated.
+  *   [Lies](https://github.com/seanmonstar/num_cpus/issues/95) and
+      [lies](https://github.com/seanmonstar/num_cpus/issues/69) and
+      [lies](https://github.com/seanmonstar/num_cpus/issues/34) and
+      [lies](https://github.com/seanmonstar/num_cpus/issues/81).
+      Not exactly this crate's fault - the system APIs are brittle and full of edge cases.
+      Multi-processor **architectures** are full of edge cases.
+  
+  Alternatives:
+  *   Just hardcode a reasonable number of threads for your workload!
+      Spinning up threads for 64 CPU cores to all false-share a single cacheline
+      because that's how many logical cores were detected isn't the right choice!
+      And all your threads are probably blocked on I/O anyways!
+  
+  [Full Audit](https://github.com/MaulingMonkey/rust-reviews/blob/master/reviews/num_cpus.md)
+----- SIGN CREV PROOF -----
+2iLEAitzzChV1NFw-I-KWoAVLCLma9ceIMIQSiWQYs3zwadzR946ZjWL_QYO2BnKXLc6cgtnymZnFBcuUJk5Cw
+----- END CREV PROOF -----
+
