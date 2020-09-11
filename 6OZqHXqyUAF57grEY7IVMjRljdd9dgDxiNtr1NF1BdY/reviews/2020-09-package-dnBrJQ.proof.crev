@@ -1141,3 +1141,40 @@ comment: |-
 KMUjlzemEsGAcRax4ozt_668qiLY9tr33DalX8MZjZ6-re3QEbpXDhjsiUezwEP3RDicXn7VKMKapCdZ41VfCQ
 ----- END CREV PROOF -----
 
+----- BEGIN CREV PROOF -----
+kind: package review
+version: -1
+date: "2020-09-11T11:41:00.181661700-07:00"
+from:
+  id-type: crev
+  id: 6OZqHXqyUAF57grEY7IVMjRljdd9dgDxiNtr1NF1BdY
+  url: "https://github.com/MaulingMonkey/crev-proofs"
+package:
+  source: "https://crates.io"
+  name: buffered_offset_reader
+  version: 0.6.0
+  revision: 6883f28ebc8b68a5d5a1b3cdf0b6e037f7e8ef4b
+  digest: kMO3vkPA6n-1X1KV8Mo3u0uWZyw6-Mk-fVj8mAnOE2o
+review:
+  thoroughness: high
+  understanding: high
+  rating: positive
+alternatives:
+  - source: "https://crates.io/crates/read_write_at"
+    name: "More generalized, less kludgy.  However, File::read_at/write_at require &mut self on windows by default"
+comment: |-
+  Offset read/write with `&self`
+  
+  Pros:
+  * No runtime dependencies
+  * `read_at(&self, ...)`
+  
+  Cons:
+  * `BufOffsetReader` is a bit kludgy - `u64 as usize` casts should probably `Err` instead
+  * Implementing traits directly on `File` makes for inconsistent seek behavior when used by reference
+  
+  [Full Audit](https://github.com/MaulingMonkey/rust-reviews/blob/master/reviews/buffered_offset_reader.md)
+----- SIGN CREV PROOF -----
+9Joc7HQdo-_r1VcZcCtD1a0Eo1zliB9pVAHlVo75-sr78r7RIowjNR-wpLhSQmADZTrFQRtcLwsJY3AX80MIAw
+----- END CREV PROOF -----
+
