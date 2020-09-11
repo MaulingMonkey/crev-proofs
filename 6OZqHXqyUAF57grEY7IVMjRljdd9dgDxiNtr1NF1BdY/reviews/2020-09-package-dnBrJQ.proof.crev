@@ -884,3 +884,38 @@ comment: |-
 jCw8OCwViSg5pHJO_eJb1jPhI-cDXFn3DlF0TZSKG7-6soIV1UzGfdhtGyoFl2JQ_-Nfzd1uRawAvMKp0HJBBw
 ----- END CREV PROOF -----
 
+----- BEGIN CREV PROOF -----
+kind: package review
+version: -1
+date: "2020-09-11T11:34:31.685185800-07:00"
+from:
+  id-type: crev
+  id: 6OZqHXqyUAF57grEY7IVMjRljdd9dgDxiNtr1NF1BdY
+  url: "https://github.com/MaulingMonkey/crev-proofs"
+package:
+  source: "https://crates.io"
+  name: read_write_at
+  version: 0.1.0
+  revision: b8d1555d335a38af8711e1a01b5be9f027189a7c
+  digest: F7sm80D2xZmvInkgh4I7pcslCdTZko-s5z_2PPswvVE
+review:
+  thoroughness: high
+  understanding: high
+  rating: positive
+alternatives:
+  - source: "https://crates.io/crates/buffered_offset_reader"
+    name: "Less generalized alternative, but implements read_at/write_at on &self for File by default"
+comment: |-
+  Offset read/write with `&self`
+  
+  Pros:
+  * No runtime dependencies
+  * Very thorough, well documented
+  
+  Cons:
+  * `File` isn't `ReadAt`/`WriteAt` on windows due to seeks... reasonable but annoying
+  * A couple of minor API holes to be fixed
+----- SIGN CREV PROOF -----
+JdvaInJtCxyEzX-TGMhuL4l3DQTlMjU8nMy6Ae_ok9CqNoFacP6QSWm_8H3pJ7bA88MFBRfekttXrTN4CKsSCA
+----- END CREV PROOF -----
+
