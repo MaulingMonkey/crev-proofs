@@ -44,3 +44,37 @@ comment: |-
 l-2bB_Gg-jbS0Mj38bvrDq52ItAziaV0iCZ9en6OimJNycrqmvb-pJN9drrQpvYLfyLt0NNHED5o3TFN70OSBw
 ----- END CREV PROOF -----
 
+----- BEGIN CREV PROOF -----
+kind: package review
+version: -1
+date: "2020-10-11T03:56:33.265325-07:00"
+from:
+  id-type: crev
+  id: 6OZqHXqyUAF57grEY7IVMjRljdd9dgDxiNtr1NF1BdY
+  url: "https://github.com/MaulingMonkey/crev-proofs"
+package:
+  source: "https://crates.io"
+  name: aseprite
+  version: 0.1.2
+  digest: jrZmi4CTvdxVA7wossNNRgjpWNIc1kJOo8T0qQbxssU
+review:
+  thoroughness: medium
+  understanding: high
+  rating: positive
+comment: |-
+  \[[Full Audit](https://github.com/MaulingMonkey/rust-reviews/blob/master/reviews/aseprite.md)\]
+  Parses JSON [aseprite](https://www.aseprite.org/) exports
+  
+  Pros:
+  * Looks fairly exhaustive, self contained
+  * No direct disk I/O
+  
+  Cons:
+  * Exahustively matchable structs make most version bumps technically breaking changes
+  * Requires non-default export options (fixed in an unmerged PR)
+  * Enum deserialization is brittle when it comes to new options
+  * Limited maintainence
+----- SIGN CREV PROOF -----
+SmpYRe66LoTvzTikTdDEewwKV2N-Oc9D1SEfY6CZGCrehFLd4Y1TwKbpolXr4xIvpGSvLJuzGdrIZFsVoDEHDA
+----- END CREV PROOF -----
+
