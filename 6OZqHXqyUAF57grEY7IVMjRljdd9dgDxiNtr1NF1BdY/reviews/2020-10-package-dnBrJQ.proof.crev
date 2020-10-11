@@ -1,0 +1,23 @@
+----- BEGIN CREV PROOF -----
+kind: package review
+version: -1
+date: "2020-10-11T03:55:20.453554800-07:00"
+from:
+  id-type: crev
+  id: 6OZqHXqyUAF57grEY7IVMjRljdd9dgDxiNtr1NF1BdY
+  url: "https://github.com/MaulingMonkey/crev-proofs"
+package:
+  source: "https://crates.io"
+  name: aseprite
+  version: 0.1.0
+  digest: _aUQXCs-trWWxbbIbt2irfxLxa-gZKoWGF-sQu8CFjc
+review:
+  thoroughness: medium
+  understanding: high
+  rating: negative
+comment: |-
+  Private fields make this unusable until 0.1.2
+----- SIGN CREV PROOF -----
+JTez-2WwYqy-nkFkAXN-WSyA3WT-0f_Fjij3wimcRS5Ju0luAjPnVgpGnq0D7hx0bniuJYJGdsb3NXa3UPiTDw
+----- END CREV PROOF -----
+
