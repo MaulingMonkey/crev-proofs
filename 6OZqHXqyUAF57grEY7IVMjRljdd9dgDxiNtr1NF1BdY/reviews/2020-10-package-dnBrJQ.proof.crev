@@ -146,3 +146,37 @@ comment: |-
 uPHKov5kgpVaDaXePqWlbBe0O6Od08KJDDND8kSldy0G6gv5o29COiYJ8OuFbA72gSH4fAtQMjLF1t0lwM9bAQ
 ----- END CREV PROOF -----
 
+----- BEGIN CREV PROOF -----
+kind: package review
+version: -1
+date: "2020-10-11T04:25:01.346892-07:00"
+from:
+  id-type: crev
+  id: 6OZqHXqyUAF57grEY7IVMjRljdd9dgDxiNtr1NF1BdY
+  url: "https://github.com/MaulingMonkey/crev-proofs"
+package:
+  source: "https://crates.io"
+  name: nonmax
+  version: 0.3.0
+  revision: 214f6ea86cf1201293bf18708506833ef67925ad
+  digest: "-4uiox59BP4gl7azhJC8bayQs1lhNvMl8GXRyYACZAE"
+review:
+  thoroughness: high
+  understanding: high
+  rating: positive
+comment: |-
+  \[[Full Audit](https://github.com/MaulingMonkey/rust-reviews/blob/master/reviews/nonmax.md)\]
+  std::num::NonZero___ equivalents
+  
+  Pros:
+  * Works
+  * Can represent 0
+  * Clever cheap xors for implementation
+  
+  Cons:
+  * Missing [a lot of traits](https://doc.rust-lang.org/std/num/struct.NonZeroI32.html#trait-implementations) vs equivalent `NonZero*`s
+  * Extra pointless unsafe in `new` impl
+----- SIGN CREV PROOF -----
+AcV67N51OSoHXIMFNRrkavHuPvAopexqxWHXXD2fBipxv-lFsfd3STWBSYcS3wgTc7vxHxqxBOmF8I2c2rNKDw
+----- END CREV PROOF -----
+
