@@ -184,3 +184,45 @@ comment: |-
 iishieF7_eN0x5lkC0yXm9qrBqTF9K2r8oeEs0oIge_tNYbwuhnHm8ELrmgCVMvud3pKmk3dDGQDlPLkqWFECQ
 ----- END CREV PROOF -----
 
+----- BEGIN CREV PROOF -----
+kind: package review
+version: -1
+date: "2020-11-01T15:19:06.426498600-08:00"
+from:
+  id-type: crev
+  id: 6OZqHXqyUAF57grEY7IVMjRljdd9dgDxiNtr1NF1BdY
+  url: "https://github.com/MaulingMonkey/crev-proofs"
+package:
+  source: "https://crates.io"
+  name: array-macro
+  version: 1.0.4
+  revision: 6918cab94e62e5234ead21d021f0b251bc7c422c
+  digest: LZ5JGO9e6qDrM5OYVw6l575nIxB0QK0W7bagwvSDvTU
+review:
+  thoroughness: high
+  understanding: high
+  rating: neutral
+issues:
+  - id: "https://gitlab.com/KonradBorowski/array-macro/-/commit/01940637dd8f3bfeeee3faf9639fa9ae52f19f4d"
+    severity: high
+    comment: "Catch-all traits defining `length` could mess with `array!` to cause UB"
+advisories:
+  - ids:
+      - "https://gitlab.com/KonradBorowski/array-macro/-/merge_requests/9"
+    severity: high
+    comment: "Replaced core::mem::uninitialized (deprecated / undefined behavior)"
+comment: |-
+  Pros:
+  * Solid and awesome
+  
+  Cons:
+  * `unsafe` in macro prevents use with `#![forbid(unsafe_code)]`
+  * Bumps MSRV on patch versions (but so far only for damn good reasons)
+  
+  [Full Audit]
+  
+  [Full Audit]:   https://github.com/MaulingMonkey/rust-reviews/blob/master/reviews/array-macro.md
+----- SIGN CREV PROOF -----
+SlTA71rFjiBgg_I7MO6yDYvZ9UPFjUgvOsiPsUoowRfVO46W7QlXWoOOiAhgkwMGoXdh4MsM39O1BS_u-jAzBg
+----- END CREV PROOF -----
+
