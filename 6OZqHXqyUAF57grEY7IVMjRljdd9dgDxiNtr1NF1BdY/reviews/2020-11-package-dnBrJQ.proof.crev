@@ -146,3 +146,41 @@ comment: |-
 6GVyrutMfcugJmmlOyBz8Z8luqHnbJxan90_M0ir4Xtjn1vnUm-y_8AEarq1BUQxwFhgU3Ps88WXJj87P8IJDg
 ----- END CREV PROOF -----
 
+----- BEGIN CREV PROOF -----
+kind: package review
+version: -1
+date: "2020-11-01T15:18:46.405587800-08:00"
+from:
+  id-type: crev
+  id: 6OZqHXqyUAF57grEY7IVMjRljdd9dgDxiNtr1NF1BdY
+  url: "https://github.com/MaulingMonkey/crev-proofs"
+package:
+  source: "https://crates.io"
+  name: array-macro
+  version: 1.0.3
+  revision: b48050c83a4a1abe1ee398fb919aa35dcc827d34
+  digest: gx1Rqk8yiM50brL1Wd-ydtq3w-EHR8jvQDG1GBnKOHA
+review:
+  thoroughness: high
+  understanding: high
+  rating: negative
+issues:
+  - id: "https://gitlab.com/KonradBorowski/array-macro/-/merge_requests/9"
+    severity: high
+    comment: "core::mem::uninitialized is deprecated / undefined behavior"
+comment: |-
+  Pros:
+  * Solid and awesome
+  
+  Cons:
+  * `unsafe` in macro prevents use with `#![forbid(unsafe_code)]`
+  * Bumps MSRV on patch versions (but so far only for damn good reasons)
+  * `core::mem::uninitialized` until 1.0.4 is UB
+  
+  [Full Audit]
+  
+  [Full Audit]:   https://github.com/MaulingMonkey/rust-reviews/blob/master/reviews/array-macro.md
+----- SIGN CREV PROOF -----
+iishieF7_eN0x5lkC0yXm9qrBqTF9K2r8oeEs0oIge_tNYbwuhnHm8ELrmgCVMvud3pKmk3dDGQDlPLkqWFECQ
+----- END CREV PROOF -----
+
