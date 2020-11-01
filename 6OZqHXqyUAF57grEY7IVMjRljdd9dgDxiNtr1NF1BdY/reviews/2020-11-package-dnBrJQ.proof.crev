@@ -261,3 +261,42 @@ comment: |-
 OOLUxjL94DkCWsCoIVUeAN4vWl9AqXV-_wbVjFrI61AMbcpwjAJmbqwt91CiyEWwPSvKoxACZsP6vwoCRHBGDA
 ----- END CREV PROOF -----
 
+----- BEGIN CREV PROOF -----
+kind: package review
+version: -1
+date: "2020-11-01T15:26:38.026858900-08:00"
+from:
+  id-type: crev
+  id: 6OZqHXqyUAF57grEY7IVMjRljdd9dgDxiNtr1NF1BdY
+  url: "https://github.com/MaulingMonkey/crev-proofs"
+package:
+  source: "https://crates.io"
+  name: array-macro
+  version: 1.0.5
+  revision: 05676b0a1f2b774bbfe670c7917f2e1a87ef951d
+  digest: TY0hisNEJxYGqK-90q-4LR0gQbedu8RVqXPeWR2qAsc
+review:
+  thoroughness: high
+  understanding: high
+  rating: positive
+advisories:
+  - ids:
+      - "https://gitlab.com/KonradBorowski/array-macro/-/commit/01940637dd8f3bfeeee3faf9639fa9ae52f19f4d"
+    severity: high
+    range: minor
+    comment: "Fixed catch-all traits being able to define `length`, which could mess with `array!` to cause UB"
+comment: |-
+  Pros:
+  * Solid and awesome
+  
+  Cons:
+  * `unsafe` in macro prevents use with `#![forbid(unsafe_code)]`
+  * Bumps MSRV on patch versions (but so far only for damn good reasons)
+  
+  [Full Audit]
+  
+  [Full Audit]:   https://github.com/MaulingMonkey/rust-reviews/blob/master/reviews/array-macro.md
+----- SIGN CREV PROOF -----
+0Lb5V9LSvF5O-Xvkk7Ddz5DR1a-fUghSDHYhp859JLk8NU61DKa8h7EvKw0xkg4YzXmyMzxx_3ejBWnM1CZBCw
+----- END CREV PROOF -----
+
