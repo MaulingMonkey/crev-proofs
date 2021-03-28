@@ -64,3 +64,35 @@ comment: |-
 NWaIMKGrcA2EFPURZ2RpbGGUemHRXg7ugWcbxnXI-hr-r3_IWKSsjA8LFxBBSCxZhZ6yH6TL2EEybHJxYcNwBg
 ----- END CREV PROOF -----
 
+----- BEGIN CREV PROOF -----
+kind: package review
+version: -1
+date: "2021-03-28T15:27:56.484784900-07:00"
+from:
+  id-type: crev
+  id: 6OZqHXqyUAF57grEY7IVMjRljdd9dgDxiNtr1NF1BdY
+  url: "https://github.com/MaulingMonkey/crev-proofs"
+package:
+  source: "https://crates.io"
+  name: leb128
+  version: 0.2.1
+  digest: JDILq3_U5fiDOSarLnL7hxYVhBZougTWO-84VaaJpYk
+review:
+  thoroughness: medium
+  understanding: high
+  rating: positive
+comment: |-
+  Encode/decode DWARF's variable length integer format, LEB128
+  
+  Pros:
+  - `Apache-2.0 OR MIT`
+  - Good test coverage
+  - Lean
+  
+  [Full Audit]
+  
+  [Full Audit]:   https://github.com/MaulingMonkey/rust-reviews/blob/master/reviews/leb128.md
+----- SIGN CREV PROOF -----
+55Qwxpe_8s8x1Aksmd62bCwSoqyam7IDqD03mDB1vowxpXoEVsg589MKwaCXoGIof0DTeYjjshRjkZRluYVfCw
+----- END CREV PROOF -----
+
