@@ -220,3 +220,40 @@ comment: |-
 1S4104KXgwWn_wR2NKACHzErE8PiXlDrgP9ZzbypUEMk942gjQEPZZrNV3u054fhUNaP_gzz1OTcIbnatHZ1AA
 ----- END CREV PROOF -----
 
+----- BEGIN CREV PROOF -----
+kind: package review
+version: -1
+date: "2021-08-24T14:27:20.954409300-07:00"
+from:
+  id-type: crev
+  id: 6OZqHXqyUAF57grEY7IVMjRljdd9dgDxiNtr1NF1BdY
+  url: "https://github.com/MaulingMonkey/crev-proofs"
+package:
+  source: "https://crates.io"
+  name: termios
+  version: 0.2.0
+  digest: wjToHc8kNSWrQZpZdkchxItX7jEaMw6kSNFTBQRgOVY
+review:
+  thoroughness: low
+  understanding: high
+  rating: positive
+comment: |-
+  \[[Full Audit]\] Terminal I/O Settings
+  
+  Pros:
+  * Portable as heck
+  * Probably sound
+  
+  Cons:
+  * Limited tests
+  * No verification against native C headers
+  
+  ## Audit
+  
+  ⚠️ Didn't verify many OS-specific structs/constants, and termios structure might not guarantee ABI stability?
+  
+  [Full Audit]: https://github.com/MaulingMonkey/rust-reviews/blob/master/reviews/termios.md
+----- SIGN CREV PROOF -----
+hKBAfl2i-xXK5SiSVdoZnuU0_UGCxe2HFwpgu8w5OVOhNa-Qjpsmr2f34JtGs5uUedcyMDOx6UPvdJXehSyXAg
+----- END CREV PROOF -----
+
